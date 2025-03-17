@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --border-radius: 12px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        .container {
+            max-width: 700px;
+            width: 90%;
+            margin: 0 auto 40px auto;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .progress-bar-container {
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            margin: 15px 0 25px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+        
+        .context-section {
+            margin-bottom: 20px;
+        }
+        
+        .context-title {
+            font-weight: 500;
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        
+        .context-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-left: 3px solid #ced4da;
+            opacity: 0.8;
+        }
+        
+        .sentence-card {
+            background-color: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100px;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+        }
+        
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-skip {
+            background-color: #6c757d;
+        }
+        
+        .btn-skip:hover {
+            background-color: #5a6268;
+        }
+        
+        .loading-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 0.3rem solid rgba(0,0,0,0.1);
+            border-top-color: var(--primary);
+            animation: spin 1s infinite linear;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .empty-context {
+            font-style: italic;
+            color: #adb5bd;
+        }
+        
+        .source-info {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: right;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+        
+        .status-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: opacity 0.5s;
+        }
+        
+        .status-success {
+            background-color: rgba(32, 191, 107, 0.15);
+            color: #20bf6b;
+        }
+        
+        .status-error {
+            background-color: rgba(235, 77, 75, 0.15);
+            color: #eb4d4b;
+        }
+        
+        .hidden {
+            opacity: 0;
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+            
+            .action-buttons .left-buttons {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Translation Helper</h1>
+        <p class="subtitle">Help us translate these sentences to improve our language resources</p>
+    </header>
+    
+    <div class="container">
+        <!-- Loading Section -->
+        <div class="card loading-section" id="loading-section">
+            <div class="spinner"></div>
+            <h2>Loading Sentences</h2>
+            <p>Please wait while we load sentences from the repository...</p>
+        </div>
+        
+        <!-- Translation Card -->
+        <div class="card" id="translation-section" style="display: none;">
+            <div class="progress-text">
+                <span>Progress</span>
+                <span id="progress-counter">1 of 10 sentences</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar" style="width: 10%"></div>
+            </div>
+            
+            <div class="context-section" id="context-section">
+                <div class="context-title">Previous context:</div>
+                <div id="context-container">
+                    <div class="empty-context">No previous sentences available</div>
+                </div>
+            </div>
+            
+            <label for="sentence-display" style="font-weight: 500; display: block; margin-bottom: 8px;">Current sentence to translate:</label>
+            <div class="sentence-card" id="sentence-display">
+                Loading sentence...
+            </div>
+            <div class="source-info" id="source-info">Source: inputs/1.csv</div>
+            
+            <label for="translation-input" style="font-weight: 500; display: block; margin-bottom: 8px;">Your translation:</label>
+            <textarea 
+                id="translation-input" 
+                placeholder="Type your translation here..."
+                aria-label="Translation input"></textarea>
+            
+            <div class="action-buttons" style="display: flex; justify-content: space-between;">
+                <button class="btn btn-skip" id="skip-btn">
+                    <i class="fas fa-forward"></i> Skip
+                </button>
+                <button class="btn" id="next-btn">
+                    <i class="fas fa-check"></i> Submit & Next
+                </button>
+            </div>
+            
+            <div id="status-message" class="status-message hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const loadingSection = document.getElementById('loading-section');
+        const translationSection = document.getElementById('translation-section');
+        const sentenceDisplay = document.getElementById('sentence-display');
+        const sourceInfo = document.getElementById('source-info');
+        const contextContainer = document.getElementById('context-container');
+        const translationInput = document.getElementById('translation-input');
+        const nextBtn = document.getElementById('next-btn');
+        const skipBtn = document.getElementById('skip-btn');
+        const progressCounter = document.getElementById('progress-counter');
+        const progressBar = document.getElementById('progress-bar');
+        const statusMessage = document.getElementById('status-message');
+        
+        // App state
+        let sentences = [];
+        let sentenceSources = [];
+        let currentIndex = 0;
+        let sessionId = new Date().toISOString().replace(/[:.]/g, '-');
+        
+        // Google Apps Script Web App URL - YOU MUST REPLACE THIS WITH YOUR OWN
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6LtnwxfbaLBr5YK5-VEXEtcMDbHQJjt2itsnOoZUfP0NlZoJeQ6zFNzyqO8KHkIRgFA/exec';
+        
+        // Get list of input files
+        async function getInputFiles() {
+            // For demonstration, we'll use a fixed list of files
+            // In a real implementation, you might have a manifest.json file that lists all available CSVs
+            return ['inputs/1.csv', 'inputs/2.csv', 'inputs/3.csv'];
+        }
+        
+        // Load sentences from all input files
+        async function loadAllSentences() {
+            const inputFiles = await getInputFiles();
+            
+            try {
+                for (const file of inputFiles) {
+                    const response = await fetch(file);
+                    
+                    if (!response.ok) {
+                        console.error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
+                        continue;
+                    }
+                    
+                    const csvText = await response.text();
+                    
+                    // Parse CSV
+                    Papa.parse(csvText, {
+                        header: true,
+                        dynamicTyping: true,
+                        skipEmptyLines: true,
+                        complete: function(results) {
+                            if (results.data && results.data.length > 0) {
+                                // Check if the CSV has a "Sentence" column
+                                if (!results.meta.fields.includes('Sentence')) {
+                                    console.error(`${file} does not contain a "Sentence" column.`);
+                                    return;
+                                }
+                                
+                                // Add sentences from this file
+                                results.data.forEach(row => {
+                                    if (row.Sentence && typeof row.Sentence === 'string' && row.Sentence.trim() !== '') {
+                                        sentences.push(row.Sentence);
+                                        sentenceSources.push(file);
+                                    }
+                                });
+                            }
+                        },
+                        error: function(error) {
+                            console.error(`Error parsing ${file}: ${error.message}`);
+                        }
+                    });
+                }
+                
+                // Check if we loaded any sentences
+                if (sentences.length === 0) {
+                    alert('No sentences found in any of the input files.');
+                    return false;
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('Error loading sentences:', error);
+                alert('Error loading sentences: ' + error.message);
+                return false;
+            }
+        }
+        
+        // Initialize the app
+        async function initialize() {
+            // Load all sentences
+            const success = await loadAllSentences();
+            
+            if (!success) {
+                loadingSection.innerHTML = `
+                    <h2 style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Error</h2>
+                    <p>Failed to load sentences. Please try again later.</p>
+                `;
+                return;
+            }
+            
+            // Hide loading, show translation section
+            loadingSection.style.display = 'none';
+            translationSection.style.display = 'block';
+            
+            // Update display
+            updateProgressDisplay();
+            displayCurrentSentence();
+        }
+        
+        // Display current sentence and previous context
+        function displayCurrentSentence() {
+            // Display current sentence
+            sentenceDisplay.textContent = sentences[currentIndex];
+            sourceInfo.textContent = `Source: ${sentenceSources[currentIndex]}`;
+            translationInput.value = '';
+            translationInput.focus();
+            
+            // Display previous context (up to 2 sentences)
+            updateContextDisplay();
+        }
+        
+        // Update the context display with previous sentences
+        function updateContextDisplay() {
+            // Clear existing context
+            contextContainer.innerHTML = '';
+            
+            // If we're at the beginning or there's only one sentence
+            if (currentIndex <= 0 || sentences.length <= 1) {
+                contextContainer.innerHTML = '<div class="empty-context">No previous sentences available</div>';
+                return;
+            }
+            
+            // Show up to 2 previous sentences
+            const startIdx = Math.max(0, currentIndex - 2);
+            for (let i = startIdx; i < currentIndex; i++) {
+                const contextDiv = document.createElement('div');
+                contextDiv.className = 'context-card';
+                contextDiv.textContent = sentences[i];
+                contextContainer.appendChild(contextDiv);
+            }
+        }
+        
+        // Update the progress display
+        function updateProgressDisplay() {
+            progressCounter.textContent = `${currentIndex + 1} of ${sentences.length} sentences`;
+            const progressPercentage = ((currentIndex) / sentences.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+        
+        // Show status message
+        function showStatus(message, isSuccess = true) {
+            statusMessage.textContent = message;
+            statusMessage.className = isSuccess ? 
+                'status-message status-success' : 
+                'status-message status-error';
+            
+            // Remove hidden class to show the message
+            statusMessage.classList.remove('hidden');
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                statusMessage.classList.add('hidden');
+            }, 3000);
+        }
+        
+        // Submit translation to Google Sheet
+        async function submitTranslation(original, translation) {
+            // Disable buttons while submitting
+            nextBtn.disabled = true;
+            skipBtn.disabled = true;
+            
+            try {
+                // Prepare data for Google Apps Script
+                const data = {
+                    sessionId: sessionId,
+                    source: sentenceSources[currentIndex],
+                    sentence: original,
+                    translation: translation,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Use fetch with CORS mode to submit to Google Apps Script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // This means we won't be able to read the response
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    redirect: 'follow',
+                    body: JSON.stringify(data)
+                });
+                
+                // Show success message
+                showStatus('Translation saved successfully!', true);
+                return true;
+            } catch (error) {
+                console.error('Error submitting translation:', error);
+                showStatus('Error saving translation. Continuing anyway.', false);
+                return false;
+            } finally {
+                // Re-enable buttons
+                nextBtn.disabled = false;
+                skipBtn.disabled = false;
+            }
+        }
+        
+        // Handle next button click
+        nextBtn.addEventListener('click', async function() {
+            const translation = translationInput.value.trim();
+            
+            if (translation === '') {
+                alert('Please enter a translation before continuing.');
+                return;
+            }
+            
+            // Submit the translation to Google Sheet
+            await submitTranslation(sentences[currentIndex], translation);
+            
+            moveToNext();
+        });
+        
+        // Handle skip button click
+        skipBtn.addEventListener('click', function() {
+            // You could record skipped sentences too if needed
+            moveToNext();
+        });
+        
+        // Move to next sentence or finish
+        function moveToNext() {
+            currentIndex++;
+            
+            if (currentIndex < sentences.length) {
+                updateProgressDisplay();
+                displayCurrentSentence();
+            } else {
+                // All done, show completion message
+                translationSection.innerHTML = `
+                    <h2 style="color: #20bf6b; text-align: center;">
+                        <i class="fas fa-check-circle"></i> Thank you!
+                    </h2>
+                    <p style="text-align: center;">
+                        You've completed all the translations. Your contributions are greatly appreciated!
+                    </p>
+                `;
+            }
+        }
+        
+        // Initialize the app
+        initialize();
+    </script>
+</body>
+</html>
