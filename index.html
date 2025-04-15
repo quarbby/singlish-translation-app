@@ -150,6 +150,7 @@
             display: inline-flex;
             align-items: center;
             transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
         }
         
         .btn:hover {
@@ -171,6 +172,14 @@
         
         .btn-skip:hover {
             background-color: #5a6268;
+        }
+        
+        .btn-no-translation {
+            background-color: #fd7e14;
+        }
+        
+        .btn-no-translation:hover {
+            background-color: #e67211;
         }
         
         .loading-section {
@@ -262,9 +271,21 @@
         <p class="subtitle">Help us translate these sentences to improve our language resources</p>
     </header>
     
+    <!-- Name Input Modal -->
+    <div id="name-modal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="card" style="max-width: 500px; width: 90%; padding: 30px;">
+            <h2 style="text-align: center; color: var(--primary); margin-top: 0;">Welcome!</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Please enter your name before getting started.</p>
+            <input type="text" id="user-name-input" placeholder="Your Name" style="width: 100%; padding: 15px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 20px; font-size: 16px;">
+            <button id="start-btn" class="btn" style="width: 100%;">
+                <i class="fas fa-play"></i> Start Translating
+            </button>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Loading Section -->
-        <div class="card loading-section" id="loading-section">
+        <div class="card loading-section" id="loading-section" style="display: none;">
             <div class="spinner"></div>
             <h2>Loading Sentences</h2>
             <p>Please wait while we load sentences from the repository...</p>
@@ -291,7 +312,7 @@
             <div class="sentence-card" id="sentence-display">
                 Loading sentence...
             </div>
-            <div class="source-info" id="source-info">Source: inputs/1.csv</div>
+            <div class="source-info" id="source-info">Source: inputs/btohqsg_messages.csv</div>
             
             <label for="translation-input" style="font-weight: 500; display: block; margin-bottom: 8px;">Your translation:</label>
             <textarea 
@@ -299,9 +320,12 @@
                 placeholder="Type your translation here..."
                 aria-label="Translation input"></textarea>
             
-            <div class="action-buttons" style="display: flex; justify-content: space-between;">
+            <div class="action-buttons" style="display: flex; justify-content: space-between; gap: 10px;">
                 <button class="btn btn-skip" id="skip-btn">
                     <i class="fas fa-forward"></i> Skip
+                </button>
+                <button class="btn btn-no-translation" id="no-translation-btn">
+                    <i class="fas fa-ban"></i> No Translation Needed
                 </button>
                 <button class="btn" id="next-btn">
                     <i class="fas fa-check"></i> Submit & Next
@@ -322,6 +346,7 @@
         const translationInput = document.getElementById('translation-input');
         const nextBtn = document.getElementById('next-btn');
         const skipBtn = document.getElementById('skip-btn');
+        const noTranslationBtn = document.getElementById('no-translation-btn');
         const progressCounter = document.getElementById('progress-counter');
         const progressBar = document.getElementById('progress-bar');
         const statusMessage = document.getElementById('status-message');
@@ -331,15 +356,66 @@
         let sentenceSources = [];
         let currentIndex = 0;
         let sessionId = new Date().toISOString().replace(/[:.]/g, '-');
+        let userName = '';
+        let selectedFile = '';
         
         // Google Apps Script Web App URL - YOU MUST REPLACE THIS WITH YOUR OWN
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6LtnwxfbaLBr5YK5-VEXEtcMDbHQJjt2itsnOoZUfP0NlZoJeQ6zFNzyqO8KHkIRgFA/exec';
         
-        // Get list of input files
+        // Get list of input files from manifest.json
         async function getInputFiles() {
-            // For demonstration, we'll use a fixed list of files
-            // In a real implementation, you might have a manifest.json file that lists all available CSVs
-            return ['inputs/1.csv', 'inputs/2.csv', 'inputs/3.csv'];
+            try {
+                // Try to fetch the manifest.json file
+                const response = await fetch('manifest.json');
+                
+                if (!response.ok) {
+                    console.error(`Failed to load manifest.json: ${response.status} ${response.statusText}`);
+                    // Fallback to default files if manifest doesn't exist
+                    return ['inputs/btohqsg_messages.csv'];
+                }
+                
+                const manifest = await response.json();
+                
+                if (!manifest.files || !Array.isArray(manifest.files) || manifest.files.length === 0) {
+                    console.error('Manifest does not contain valid files array');
+                    return ['inputs/btohqsg_messages.csv'];
+                }
+                
+                // If randomization is requested, select a single random file
+                if (selectedFile) {
+                    return [selectedFile];
+                }
+                
+                return manifest.files;
+            } catch (error) {
+                console.error('Error loading manifest.json:', error);
+                // Fallback to default file
+                return ['inputs/btohqsg_messages.csv'];
+            }
+        }
+        
+        // Function to randomly select one file from manifest
+        async function selectRandomFile() {
+            try {
+                const response = await fetch('manifest.json');
+                
+                if (!response.ok) {
+                    return 'inputs/btohqsg_messages.csv';
+                }
+                
+                const manifest = await response.json();
+                
+                if (!manifest.files || !Array.isArray(manifest.files) || manifest.files.length === 0) {
+                    return 'inputs/btohqsg_messages.csv';
+                }
+                
+                // Randomly select one file
+                const randomIndex = Math.floor(Math.random() * manifest.files.length);
+                return manifest.files[randomIndex];
+            } catch (error) {
+                console.error('Error selecting random file:', error);
+                return 'inputs/btohqsg_messages.csv';
+            }
         }
         
         // Load sentences from all input files
@@ -364,16 +440,19 @@
                         skipEmptyLines: true,
                         complete: function(results) {
                             if (results.data && results.data.length > 0) {
-                                // Check if the CSV has a "Sentence" column
-                                if (!results.meta.fields.includes('Sentence')) {
-                                    console.error(`${file} does not contain a "Sentence" column.`);
+                                // Check if the CSV has a "text" column (adjusted from "Sentence" to match your CSV structure)
+                                const textColumn = results.meta.fields.includes('text') ? 'text' : 
+                                                  results.meta.fields.includes('Sentence') ? 'Sentence' : null;
+                                
+                                if (!textColumn) {
+                                    console.error(`${file} does not contain a "text" or "Sentence" column.`);
                                     return;
                                 }
                                 
                                 // Add sentences from this file
                                 results.data.forEach(row => {
-                                    if (row.Sentence && typeof row.Sentence === 'string' && row.Sentence.trim() !== '') {
-                                        sentences.push(row.Sentence);
+                                    if (row[textColumn] && typeof row[textColumn] === 'string' && row[textColumn].trim() !== '') {
+                                        sentences.push(row[textColumn]);
                                         sentenceSources.push(file);
                                     }
                                 });
@@ -399,8 +478,15 @@
             }
         }
         
-        // Initialize the app
+        // Initialize the app after name entry
         async function initialize() {
+            // Show loading section
+            loadingSection.style.display = 'flex';
+            
+            // First select a random file
+            selectedFile = await selectRandomFile();
+            console.log('Selected file:', selectedFile);
+            
             // Load all sentences
             const success = await loadAllSentences();
             
@@ -408,6 +494,8 @@
                 loadingSection.innerHTML = `
                     <h2 style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Error</h2>
                     <p>Failed to load sentences. Please try again later.</p>
+                    <p>Make sure you have generated the manifest.json file using the manifest-generator.js script.</p>
+                    <button class="btn" onclick="window.location.reload()">Try Again</button>
                 `;
                 return;
             }
@@ -420,6 +508,34 @@
             updateProgressDisplay();
             displayCurrentSentence();
         }
+        
+        // Handle name submission and start app
+        document.getElementById('start-btn').addEventListener('click', function() {
+            const nameInput = document.getElementById('user-name-input');
+            const name = nameInput.value.trim();
+            
+            if (name === '') {
+                alert('Please enter your name before continuing.');
+                nameInput.focus();
+                return;
+            }
+            
+            // Store the user name
+            userName = name;
+            
+            // Hide the modal
+            document.getElementById('name-modal').style.display = 'none';
+            
+            // Initialize the app
+            initialize();
+        });
+        
+        // Also allow pressing Enter on the name input
+        document.getElementById('user-name-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('start-btn').click();
+            }
+        });
         
         // Display current sentence and previous context
         function displayCurrentSentence() {
@@ -478,18 +594,26 @@
         }
         
         // Submit translation to Google Sheet
-        async function submitTranslation(original, translation) {
+        async function submitTranslation(original, translation, status = 'translated') {
             // Disable buttons while submitting
             nextBtn.disabled = true;
             skipBtn.disabled = true;
+            noTranslationBtn.disabled = true;
             
             try {
+                // Make sure we have a userName, even if modal was bypassed
+                if (!userName || userName.trim() === '') {
+                    userName = 'Anonymous User';
+                }
+                
                 // Prepare data for Google Apps Script
                 const data = {
                     sessionId: sessionId,
+                    userName: userName,
                     source: sentenceSources[currentIndex],
                     sentence: original,
                     translation: translation,
+                    status: status, // New field to track translation status
                     timestamp: new Date().toISOString()
                 };
                 
@@ -516,6 +640,7 @@
                 // Re-enable buttons
                 nextBtn.disabled = false;
                 skipBtn.disabled = false;
+                noTranslationBtn.disabled = false;
             }
         }
         
@@ -529,14 +654,22 @@
             }
             
             // Submit the translation to Google Sheet
-            await submitTranslation(sentences[currentIndex], translation);
+            await submitTranslation(sentences[currentIndex], translation, 'translated');
             
             moveToNext();
         });
         
         // Handle skip button click
         skipBtn.addEventListener('click', function() {
-            // You could record skipped sentences too if needed
+            // Record skipped sentences with empty translation
+            submitTranslation(sentences[currentIndex], '', 'skipped');
+            moveToNext();
+        });
+        
+        // Handle no translation needed button click
+        noTranslationBtn.addEventListener('click', function() {
+            // Record as not needing translation
+            submitTranslation(sentences[currentIndex], 'No Translation Needed', 'no_translation_needed');
             moveToNext();
         });
         
@@ -560,8 +693,11 @@
             }
         }
         
-        // Initialize the app
-        initialize();
+        // We don't auto-initialize anymore - wait for name input
+        // Set focus on the name input when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('user-name-input').focus();
+        });
     </script>
 </body>
 </html>
