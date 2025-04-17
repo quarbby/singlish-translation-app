@@ -319,385 +319,68 @@
                 id="translation-input" 
                 placeholder="Type your translation here..."
                 aria-label="Translation input"></textarea>
-            
-            <div class="action-buttons" style="display: flex; justify-content: space-between; gap: 10px;">
-                <button class="btn btn-skip" id="skip-btn">
-                    <i class="fas fa-forward"></i> Skip
-                </button>
-                <button class="btn btn-no-translation" id="no-translation-btn">
-                    <i class="fas fa-ban"></i> No Translation Needed
-                </button>
-                <button class="btn" id="next-btn">
-                    <i class="fas fa-check"></i> Submit & Next
-                </button>
-            </div>
-            
-            <div id="status-message" class="status-message hidden"></div>
-        </div>
-    </div>
 
-    <script>
-        // DOM Elements
-        const loadingSection = document.getElementById('loading-section');
-        const translationSection = document.getElementById('translation-section');
-        const sentenceDisplay = document.getElementById('sentence-display');
-        const sourceInfo = document.getElementById('source-info');
-        const contextContainer = document.getElementById('context-container');
-        const translationInput = document.getElementById('translation-input');
-        const nextBtn = document.getElementById('next-btn');
-        const skipBtn = document.getElementById('skip-btn');
-        const noTranslationBtn = document.getElementById('no-translation-btn');
-        const progressCounter = document.getElementById('progress-counter');
-        const progressBar = document.getElementById('progress-bar');
-        const statusMessage = document.getElementById('status-message');
+<!-- Particle Selection Section -->
+<div class="particle-section" style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border-left: 3px solid #4361ee;">
+    <p style="font-weight: 500; margin-bottom: 10px;">If there is a Singlish particle <span style="color: #4361ee; font-weight: bold;">at the end of the sentence</span>, select the particle and write its variation:</p>
+    
+        <div class="particle-checkboxes" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="particle" value="hor" style="margin-right: 5px;"> hor
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="particle" value="lah" style="margin-right: 5px;"> lah
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="particle" value="lor" style="margin-right: 5px;"> lor
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="particle" value="no_particle" style="margin-right: 5px;"> No Particle
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="particle" value="others" style="margin-right: 5px;"> Others
+            </label>
+        </div>
         
-        // App state
-        let sentences = [];
-        let sentenceSources = [];
-        let currentIndex = 0;
-        let sessionId = new Date().toISOString().replace(/[:.]/g, '-');
-        let userName = '';
-        let selectedFile = '';
+        <!-- Variation input for standard particles -->
+        <div id="particle-variation-div" style="margin-bottom: 15px; display: none;">
+            <p style="font-weight: 500; margin-bottom: 10px;">What is the variation of the particle?</p>
+            <input type="text" id="particle-variation" placeholder="Enter the particle variation (e.g., lah, leh)" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 8px;">
+        </div>
         
-        // Google Apps Script Web App URL - YOU MUST REPLACE THIS WITH YOUR OWN
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6LtnwxfbaLBr5YK5-VEXEtcMDbHQJjt2itsnOoZUfP0NlZoJeQ6zFNzyqO8KHkIRgFA/exec';
+        <!-- Other particle input -->
+        <input type="text" id="particle-other" placeholder="Specify other particle if selected" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 15px; display: none;">
         
-        // Get list of input files from manifest.json
-        async function getInputFiles() {
-            try {
-                // Try to fetch the manifest.json file
-                const response = await fetch('manifest.json');
-                
-                if (!response.ok) {
-                    console.error(`Failed to load manifest.json: ${response.status} ${response.statusText}`);
-                    // Fallback to default files if manifest doesn't exist
-                    return ['inputs/btohqsg_messages.csv'];
-                }
-                
-                const manifest = await response.json();
-                
-                if (!manifest.files || !Array.isArray(manifest.files) || manifest.files.length === 0) {
-                    console.error('Manifest does not contain valid files array');
-                    return ['inputs/btohqsg_messages.csv'];
-                }
-                
-                // If randomization is requested, select a single random file
-                if (selectedFile) {
-                    return [selectedFile];
-                }
-                
-                return manifest.files;
-            } catch (error) {
-                console.error('Error loading manifest.json:', error);
-                // Fallback to default file
-                return ['inputs/btohqsg_messages.csv'];
-            }
-        }
+        <p style="font-weight: 500; margin-bottom: 10px;">What does the particle mean in this sentence?</p>
         
-        // Function to randomly select one file from manifest
-        async function selectRandomFile() {
-            try {
-                const response = await fetch('manifest.json');
-                
-                if (!response.ok) {
-                    return 'inputs/btohqsg_messages.csv';
-                }
-                
-                const manifest = await response.json();
-                
-                if (!manifest.files || !Array.isArray(manifest.files) || manifest.files.length === 0) {
-                    return 'inputs/btohqsg_messages.csv';
-                }
-                
-                // Randomly select one file
-                const randomIndex = Math.floor(Math.random() * manifest.files.length);
-                return manifest.files[randomIndex];
-            } catch (error) {
-                console.error('Error selecting random file:', error);
-                return 'inputs/btohqsg_messages.csv';
-            }
-        }
+        <!-- Dynamically populated meaning options -->
+        <div id="particle-meanings" style="margin-bottom: 15px;">
+            <!-- This will be populated based on the selected particle -->
+            <div class="empty-meanings" style="font-style: italic; color: #adb5bd;">Select a particle above to see meaning options</div>
+        </div>
         
-        // Load sentences from all input files
-        async function loadAllSentences() {
-            const inputFiles = await getInputFiles();
+        <input type="text" id="meaning-other" placeholder="Specify other meaning if selected" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 8px; display: none;">
+    </div>
             
-            try {
-                for (const file of inputFiles) {
-                    const response = await fetch(file);
-                    
-                    if (!response.ok) {
-                        console.error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
-                        continue;
-                    }
-                    
-                    const csvText = await response.text();
-                    
-                    // Parse CSV
-                    Papa.parse(csvText, {
-                        header: true,
-                        dynamicTyping: true,
-                        skipEmptyLines: true,
-                        complete: function(results) {
-                            if (results.data && results.data.length > 0) {
-                                // Check if the CSV has a "text" column (adjusted from "Sentence" to match your CSV structure)
-                                const textColumn = results.meta.fields.includes('text') ? 'text' : 
-                                                  results.meta.fields.includes('Sentence') ? 'Sentence' : null;
-                                
-                                if (!textColumn) {
-                                    console.error(`${file} does not contain a "text" or "Sentence" column.`);
-                                    return;
-                                }
-                                
-                                // Add sentences from this file
-                                results.data.forEach(row => {
-                                    if (row[textColumn] && typeof row[textColumn] === 'string' && row[textColumn].trim() !== '') {
-                                        sentences.push(row[textColumn]);
-                                        sentenceSources.push(file);
-                                    }
-                                });
-                            }
-                        },
-                        error: function(error) {
-                            console.error(`Error parsing ${file}: ${error.message}`);
-                        }
-                    });
-                }
-                
-                // Check if we loaded any sentences
-                if (sentences.length === 0) {
-                    alert('No sentences found in any of the input files.');
-                    return false;
-                }
-                
-                return true;
-            } catch (error) {
-                console.error('Error loading sentences:', error);
-                alert('Error loading sentences: ' + error.message);
-                return false;
-            }
-        }
-        
-        // Initialize the app after name entry
-        async function initialize() {
-            // Show loading section
-            loadingSection.style.display = 'flex';
-            
-            // First select a random file
-            selectedFile = await selectRandomFile();
-            console.log('Selected file:', selectedFile);
-            
-            // Load all sentences
-            const success = await loadAllSentences();
-            
-            if (!success) {
-                loadingSection.innerHTML = `
-                    <h2 style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Error</h2>
-                    <p>Failed to load sentences. Please try again later.</p>
-                    <p>Make sure you have generated the manifest.json file using the manifest-generator.js script.</p>
-                    <button class="btn" onclick="window.location.reload()">Try Again</button>
-                `;
-                return;
-            }
-            
-            // Hide loading, show translation section
-            loadingSection.style.display = 'none';
-            translationSection.style.display = 'block';
-            
-            // Update display
-            updateProgressDisplay();
-            displayCurrentSentence();
-        }
-        
-        // Handle name submission and start app
-        document.getElementById('start-btn').addEventListener('click', function() {
-            const nameInput = document.getElementById('user-name-input');
-            const name = nameInput.value.trim();
-            
-            if (name === '') {
-                alert('Please enter your name before continuing.');
-                nameInput.focus();
-                return;
-            }
-            
-            // Store the user name
-            userName = name;
-            
-            // Hide the modal
-            document.getElementById('name-modal').style.display = 'none';
-            
-            // Initialize the app
-            initialize();
-        });
-        
-        // Also allow pressing Enter on the name input
-        document.getElementById('user-name-input').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                document.getElementById('start-btn').click();
-            }
-        });
-        
-        // Display current sentence and previous context
-        function displayCurrentSentence() {
-            // Display current sentence
-            sentenceDisplay.textContent = sentences[currentIndex];
-            sourceInfo.textContent = `Source: ${sentenceSources[currentIndex]}`;
-            translationInput.value = '';
-            translationInput.focus();
-            
-            // Display previous context (up to 2 sentences)
-            updateContextDisplay();
-        }
-        
-        // Update the context display with previous sentences
-        function updateContextDisplay() {
-            // Clear existing context
-            contextContainer.innerHTML = '';
-            
-            // If we're at the beginning or there's only one sentence
-            if (currentIndex <= 0 || sentences.length <= 1) {
-                contextContainer.innerHTML = '<div class="empty-context">No previous sentences available</div>';
-                return;
-            }
-            
-            // Show up to 2 previous sentences
-            const startIdx = Math.max(0, currentIndex - 2);
-            for (let i = startIdx; i < currentIndex; i++) {
-                const contextDiv = document.createElement('div');
-                contextDiv.className = 'context-card';
-                contextDiv.textContent = sentences[i];
-                contextContainer.appendChild(contextDiv);
-            }
-        }
-        
-        // Update the progress display
-        function updateProgressDisplay() {
-            progressCounter.textContent = `${currentIndex + 1} of ${sentences.length} sentences`;
-            const progressPercentage = ((currentIndex) / sentences.length) * 100;
-            progressBar.style.width = `${progressPercentage}%`;
-        }
-        
-        // Show status message
-        function showStatus(message, isSuccess = true) {
-            statusMessage.textContent = message;
-            statusMessage.className = isSuccess ? 
-                'status-message status-success' : 
-                'status-message status-error';
-            
-            // Remove hidden class to show the message
-            statusMessage.classList.remove('hidden');
-            
-            // Hide after 3 seconds
-            setTimeout(() => {
-                statusMessage.classList.add('hidden');
-            }, 3000);
-        }
-        
-        // Submit translation to Google Sheet
-        async function submitTranslation(original, translation, status = 'translated') {
-            // Disable buttons while submitting
-            nextBtn.disabled = true;
-            skipBtn.disabled = true;
-            noTranslationBtn.disabled = true;
-            
-            try {
-                // Make sure we have a userName, even if modal was bypassed
-                if (!userName || userName.trim() === '') {
-                    userName = 'Anonymous User';
-                }
-                
-                // Prepare data for Google Apps Script
-                const data = {
-                    sessionId: sessionId,
-                    userName: userName,
-                    source: sentenceSources[currentIndex],
-                    sentence: original,
-                    translation: translation,
-                    status: status, // New field to track translation status
-                    timestamp: new Date().toISOString()
-                };
-                
-                // Use fetch with CORS mode to submit to Google Apps Script
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors', // This means we won't be able to read the response
-                    cache: 'no-cache',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    redirect: 'follow',
-                    body: JSON.stringify(data)
-                });
-                
-                // Show success message
-                showStatus('Translation saved successfully!', true);
-                return true;
-            } catch (error) {
-                console.error('Error submitting translation:', error);
-                showStatus('Error saving translation. Continuing anyway.', false);
-                return false;
-            } finally {
-                // Re-enable buttons
-                nextBtn.disabled = false;
-                skipBtn.disabled = false;
-                noTranslationBtn.disabled = false;
-            }
-        }
-        
-        // Handle next button click
-        nextBtn.addEventListener('click', async function() {
-            const translation = translationInput.value.trim();
-            
-            if (translation === '') {
-                alert('Please enter a translation before continuing.');
-                return;
-            }
-            
-            // Submit the translation to Google Sheet
-            await submitTranslation(sentences[currentIndex], translation, 'translated');
-            
-            moveToNext();
-        });
-        
-        // Handle skip button click
-        skipBtn.addEventListener('click', function() {
-            // Record skipped sentences with empty translation
-            submitTranslation(sentences[currentIndex], '', 'skipped');
-            moveToNext();
-        });
-        
-        // Handle no translation needed button click
-        noTranslationBtn.addEventListener('click', function() {
-            // Record as not needing translation
-            submitTranslation(sentences[currentIndex], 'No Translation Needed', 'no_translation_needed');
-            moveToNext();
-        });
-        
-        // Move to next sentence or finish
-        function moveToNext() {
-            currentIndex++;
-            
-            if (currentIndex < sentences.length) {
-                updateProgressDisplay();
-                displayCurrentSentence();
-            } else {
-                // All done, show completion message
-                translationSection.innerHTML = `
-                    <h2 style="color: #20bf6b; text-align: center;">
-                        <i class="fas fa-check-circle"></i> Thank you!
-                    </h2>
-                    <p style="text-align: center;">
-                        You've completed all the translations. Your contributions are greatly appreciated!
-                    </p>
-                `;
-            }
-        }
-        
-        // We don't auto-initialize anymore - wait for name input
-        // Set focus on the name input when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('user-name-input').focus();
-        });
-    </script>
+
+<!-- Action Buttons-->
+    <div class="action-buttons" style="display: flex; justify-content: space-between; gap: 10px;">
+        <button class="btn btn-skip" id="skip-btn">
+            <i class="fas fa-forward"></i> Skip
+        </button>
+        <button class="btn btn-no-translation" id="no-translation-btn">
+            <i class="fas fa-ban"></i> No Translation Needed
+        </button>
+        <button class="btn" id="next-btn">
+            <i class="fas fa-check"></i> Submit & Next
+        </button>
+    </div>
+    
+    <div id="status-message" class="status-message hidden"></div>
+</div>
+</div>
+
+<!-- Load script at the end of the body -->
+<script src="script.js"></script>
 </body>
 </html>
