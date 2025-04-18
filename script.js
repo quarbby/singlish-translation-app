@@ -97,7 +97,25 @@ async function getInputFiles() {
     }
 }
 
-// Function to randomly select one file from manifest
+// Load the completion tracker script
+function loadCompletionTracker() {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'completion_tracker.js';
+        script.onload = () => {
+            // Initialize the tracker once loaded
+            window.CompletionTracker.init();
+            resolve();
+        };
+        script.onerror = () => {
+            console.error('Failed to load completion tracker');
+            reject(new Error('Failed to load completion tracker'));
+        };
+        document.body.appendChild(script);
+    });
+}
+
+// Function to randomly select one file from manifest, prioritizing uncompleted files
 async function selectRandomFile() {
     try {
         const response = await fetch('manifest.json');
@@ -112,9 +130,22 @@ async function selectRandomFile() {
             return 'inputs/btohqsg_messages.csv';
         }
         
-        // Randomly select one file
-        const randomIndex = Math.floor(Math.random() * manifest.files.length);
-        return manifest.files[randomIndex];
+        // If we have the CompletionTracker, use it to select a file
+        if (window.CompletionTracker) {
+            const nextFile = window.CompletionTracker.getNextAvailableFile(manifest.files);
+            
+            // If all files are completed, just pick a random one
+            if (nextFile === null) {
+                const randomIndex = Math.floor(Math.random() * manifest.files.length);
+                return manifest.files[randomIndex];
+            }
+            
+            return nextFile;
+        } else {
+            // Fallback to random selection if tracker not available
+            const randomIndex = Math.floor(Math.random() * manifest.files.length);
+            return manifest.files[randomIndex];
+        }
     } catch (error) {
         console.error('Error selecting random file:', error);
         return 'inputs/btohqsg_messages.csv';
@@ -183,8 +214,18 @@ async function loadAllSentences() {
 
 // Initialize the app after name entry
 async function initialize() {
+    const loadingSection = document.getElementById('loading-section');
+    const translationSection = document.getElementById('translation-section');
+    
     // Show loading section
     loadingSection.style.display = 'flex';
+    
+    try {
+        // Try to load the completion tracker
+        await loadCompletionTracker();
+    } catch (error) {
+        console.warn('Completion tracker not available, continuing without tracking');
+    }
     
     // First select a random file
     selectedFile = await selectRandomFile();
@@ -565,6 +606,15 @@ noTranslationBtn.addEventListener('click', function() {
 
 // Move to next sentence or finish
 function moveToNext() {
+    // Update completion tracking if available
+    if (window.CompletionTracker) {
+        window.CompletionTracker.updateFileStatus(
+            selectedFile,
+            sentences.length, 
+            currentIndex + 1
+        );
+    }
+    
     currentIndex++;
     
     if (currentIndex < sentences.length) {
@@ -572,13 +622,29 @@ function moveToNext() {
         displayCurrentSentence();
     } else {
         // All done, show completion message
+        const translationSection = document.getElementById('translation-section');
+        
+        // Prepare completion report if tracker is available
+        let completionReport = '';
+        if (window.CompletionTracker) {
+            completionReport = window.CompletionTracker.getCompletionReport();
+        }
+        
         translationSection.innerHTML = `
             <h2 style="color: #20bf6b; text-align: center;">
                 <i class="fas fa-check-circle"></i> Thank you!
             </h2>
             <p style="text-align: center;">
-                You've completed all the translations. Your contributions are greatly appreciated!
+                You've completed all the translations for this file. Your contributions are greatly appreciated!
             </p>
+            <div style="margin-top: 30px;">
+                ${completionReport}
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="btn" onclick="window.location.reload()">
+                    <i class="fas fa-sync"></i> Translate Another File
+                </button>
+            </div>
         `;
     }
 }
