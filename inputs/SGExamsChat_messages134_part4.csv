@@ -1,0 +1,51 @@
+text,group
+You help ba  my C++ boundary hit,btohqsg
+if you're truly using cpp  then use vectors,btohqsg
+I noob at C++ but from what I think struct is custom type,btohqsg
+I might not have time to learn new shit,btohqsg
+Is there a way I can do something similar,btohqsg
+your array must be of the same type,btohqsg
+you're just limiting yourself trying to do that,btohqsg
+Actuslly u can just create a function to convert arrays using hash,btohqsg
+Not much of an issue there,btohqsg
+But idk how else to be able to add users,btohqsg
+Or change data in cells for that matter,btohqsg
+and how is she going to get a hash function in?,btohqsg
+sigh i'll get some sample code,btohqsg
+Let ur desired data set lets say int be represented by a char set,btohqsg
+So u write a function that can convert int to char for storage,btohqsg
+Idk how limited the scope is for cpp for that,btohqsg
+is '5int' a size 5 integer?,btohqsg
+Fuckkkk my life I totally don't have time for that but I can't just not do it if not I can't move on to code other shit,btohqsg
+Doesnt cpp allow int to be stored as string ? Just convert everything to a string,btohqsg
+Wa but IDK how to do this in an 'easy' or 'usable' way in C++,btohqsg
+Uhhh how TF does one do that,btohqsg
+I can tell you for sure,btohqsg
+Thats coz shes limited to cpp,btohqsg
+I originally wanted to use fstream but pic18 has no file systems :'),btohqsg
+Why not use vectors of arrays of 5 ints,btohqsg
+But uhh IDK any easier way,btohqsg
+No idea  never learnt about it,btohqsg
+Basically they have easier addition of members methods,btohqsg
+Array needs to prealloc memory I think  so you can never have easy 'addition' of rows to an array,btohqsg
+So if you want to add or remove users or rows on the fly I definitely DON'T recommend array,btohqsg
+the eeprom has 256 bytes of usable memory,btohqsg
+But I haven't learnt that shit,btohqsg
+"#include <string.h>#include <stdio.h>#define MAX_LEN 256struct user_t {char id[MAX_LEN];int first;int second;int third;};int main() {user_t arr[MAX_LEN];// Init first userstrcpy(arr[0].id  ""1234567890"");arr[0].first = 0;arr[0].second = 1;arr[0].third = 2;printf(""User is %s  first int is %d  second int is %d  third int is %d""  arr[0].id  arr[0].first  arr[0].second  arr[0].third);}",btohqsg
+Even the 4.0 GPA senior said that it's not easy,btohqsg
+Paiseh  not int int int  is pair int int  pair int int  size 5 arr int,btohqsg
+W h a t is t h i s,btohqsg
+doesn't matter whether you use tuple or pair inside the struct anyway,btohqsg
+you're basically making your own at this point,btohqsg
+@Alexandra_WildeAnyway you should be able to use his boilerplate to make your own from here?,btohqsg
+You need change it such that your 2nd thing 3rd thing and 4th thing are what you need,btohqsg
+I don't understand it at all,btohqsg
+which part do you not understand?,btohqsg
+Do u know basics of classes ?,btohqsg
+well... that's as much as I can recommend,btohqsg
+Ah oo yeah struct seems like baby oop,btohqsg
+Then is it Templates which is custom types?,btohqsg
+idk  she says she's using cpp  but everything discussed so far is C,btohqsg
+yeah templates allow you to initialise the class with whatever class you want,btohqsg
+hey structs can even contain function pointers,btohqsg
+so you can have functions inside your struct making it more oop,btohqsg

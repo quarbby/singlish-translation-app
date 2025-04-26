@@ -1,0 +1,51 @@
+text,group
+Single source shortest path is v specific. Like 1 source to 1 vertex at a time.Eg A to B takes 5A to C takes 10A to D takes ..... like that 1 by 1,btohqsg
+Ur source vertex is A here,btohqsg
+Oh not from a to b to c to d  liddat har,btohqsg
+I no need start from A again,btohqsg
+I want start from A and span everywhere,btohqsg
+Minimum spanning tree is like u start from A,btohqsg
+Using minimum total possible edge weight,btohqsg
+You go read up prim algorithm,btohqsg
+These are the 2 to find minimum soanning tree,btohqsg
+But my edge is unidirectional sia,btohqsg
+Minimum spanning tree is for connected undirected weighted edge graph,btohqsg
+Once u visit a vertex  u box it up,btohqsg
+Eh but I can visit the vertex multiple times sia,btohqsg
+Choose the minimum possible weighted edge each time,btohqsg
+No requirement to stop only once per vertex,btohqsg
+Cos no direct path for certain pairs of vertex,btohqsg
+You see whats the smallest edge,btohqsg
+From A to any vertex not boxed up yet,btohqsg
+If for eg A to C has the smallest edge,btohqsg
+So A and C are now visited,btohqsg
+Repeat this until all vertex visited,btohqsg
+Then there's no direct edge between c and b,btohqsg
+I want go b from c,btohqsg
+Ur problem just wants u to visit all vertex right,btohqsg
+As long as it passes the vertex once is ok?,btohqsg
+As long as ur graph is connected  minimum spanning tree will work,btohqsg
+Fuck 18 vertex my friend want to draw it out,btohqsg
+If not connected ur problem is meaningless lol,btohqsg
+Cause it is impossible to visit all if unconnected,btohqsg
+you can get from ANY vertex to ANY OTHER vertex via a series of edges,btohqsg
+I think confirm is connected if. Not can't even do,btohqsg
+Hand draw can find solutions bo,btohqsg
+True  just as an admin i would like to caution against giving away personal info to new members,btohqsg
+Diff and integration are kinda fun ngl 😳 when i revise them and have the rules on hand ateast,btohqsg
+Well tbh H1 econs tests on 3 macro aims instead of 4.,btohqsg
+Ok I give up le. MST finds the edges only,btohqsg
+Never count how many times I need to pass through the edges,btohqsg
+My brain kenot comprehend this shit,btohqsg
+I remember alr. It tastes like abolone!!,btohqsg
+the rain seem to have stopped@medbag,btohqsg
+It felt so good when its raining,btohqsg
+what is peace when you've exams in 10 days,btohqsg
+For some reason it made everything felt..,btohqsg
+Everybody knows it sucks to grow up,btohqsg
+I shall evolve into a fetus,btohqsg
+The years go on and we're still fighting :),btohqsg
+Being asian with parents that have high expectations of you,btohqsg
+Atleast im almost done being a student.,btohqsg
+luckily my parents aren't typical asians,btohqsg
+they don't really have any expectations,btohqsg

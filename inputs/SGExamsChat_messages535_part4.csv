@@ -1,0 +1,51 @@
+text,group
+are teenagers these bored these days,btohqsg
+im not that boliao to the point i tag important people to slander them tbf,btohqsg
+Probably pay some fee at private institutions like MDIS?,btohqsg
+did rand reply to his own question,btohqsg
+time to ask on sgexams reddit,btohqsg
+lucky for me  i got window grills,btohqsg
+https://stackoverflow.com/questions/76647454/proper-way-of-setting-up-oauth2-for-authentication-for-microservicesAnyone got opinions on this ?,btohqsg
+is anyone good in html/css here,btohqsg
+keep the frontend and authorization logic separate  frontend is responsible for displaying the screen component and just redirecting the user to the external oauth2 page  once you get the authorization code from the redirect uri the backend can then exchange it for a jwt access token (or refresh if you want as well)to explain on how the above works:1) your frontend redirects the user to the oauth2 external authorization url  it has things like client_id (which you should already have) and redirect_uri2) oauth2 provider will redirect them through the redirect_uri  this redirect_uri should be your backend server endpoint3) your backend server endpoint that takes the authorization code and turns it into jwt access token (or and refresh token)you notice that while frontend and backend both interacts with the oauth2 provider  only your backend have a direct server relationship with the oauth2 provider  because the redirect_uri to your server endpoint means the provider is directly calling ur server endpoint and frontend has no business on thisso to answer your questions right (i assume the SO asker is you ah)> Do I need to set up a frontend that exchanges the authorisation token with the oauth2 provider (let's say Google) and then sends that authorisation token to AMS and then let the AMS use the authorisation token and exchange it for access and refresh tokens from the Oauth2 provider ?100% no  as explained above  ur frontend redirect the user to the external oauth2 provider url  the external oauth2 provider directly calls ur backend endpoint  so is just between your AMS <-> oauth2 provider> In this case  does it mean I have to register both microservices (frontend and AMS) with the oauth2 provider so that one can request the code and the other can exchange it?no  only your AMS should be registered  as mentioned  your frontend should only be purely responsible for your screen component  everything else like backend logic is no go> Is it more advisable to bring the frontend's code (React + ChakraUI) for login  and registration to the AMS (python)?same thing as above> Is there an alternative to both or a right way to do it?you can look up PKCE  but it is more relevant for apps like SPA because your tokens are exposed since everything is done on the client side  but generally the method above is standard approach,btohqsg
+So youre suggesting only to register AMS w provider so that the ams does the full implicit grant flow. What do i display in the frontend then? Idk if the ques makes sense…Currently exploring PKCE and webauthn hahaah but not too sure how they fit in the ms archi.Code in queshttps://github.com/neilscallywag/MS-TemplateUse the features branch,btohqsg
+yes correct  your frontend should be displaying the buttons lor  when users press on it  it should trigger the entire authentication flow  frontend should display the user info (sorry im not sure if i understood ur qn) based on what was provided from the backend after verifying,btohqsg
+basically you know how HTTP requests works right,btohqsg
+Hmmm actually yeah i think i overthought the issue in my head,btohqsg
+anyway in the context of microservice architecture  basically what your AMS is responsible for is generating the JWT access token  its also purely responsible for handling all the oauth2 flow and all the nonsense with the external provider so your other microservice no ned to bother about it  they only need to verify the JWT access token on request and that's it,btohqsg
+cause the main concept of microservice is separation of concerns ma,btohqsg
+yeah hahaha  after the flow its just standard JWT verification with the server side to display the authenticated info from the API,btohqsg
+Yeah….. actually jn i q confused when reading the tutorial… had to look at the RFC for oauth2 to und its actually not even for authn its for authz,btohqsg
+But thanks a lot man really appreciate the help <3,btohqsg
+actually do you really need a microservice architecture though  you just making a webapp right  if its not too big the entire backend can just handle it  anyway you only need a couple of auth endpoint such as where the oauth2 external provider redirect uri will throw to and your standard log in create account (if you have a native auth system instead of just oauth2),btohqsg
+I making a template for projects and hackathons… the usual people i work with spec in diff langs ( ts  golang and py),btohqsg
+ur backend is what? nodejs? or python,btohqsg
+Thats why wanted to do MS archi to make authn easier to incorporate,btohqsg
+if its nodejs u can just throw a firebase SDK on it for ur auth stuff and call it a day,btohqsg
+Then jwt verification handled by kong gateway or aws,btohqsg
+u making a boilerplate to speedrun hackathon is it,btohqsg
+ok ya that makes sense  so an auth boilerplate to handle all the oauth nonsense then just let them build their own backend to just verify the jwt can alr  but yea it depends on waht you need ba  if its oauth2 it's a bit more complicated because you need to handle the interaction with external provider  if its just native login system on ur app then just import some library can liao,btohqsg
+lol got some guy just replied you on SO,btohqsg
+Yep yep… but native login a bit meh alr,btohqsg
+ok ya actually same thing  authorization code flow meta,btohqsg
+Even in the rfc the resource owner is avtually referring to my user legit had to reread 10101019283739x,btohqsg
+Okay but yeah he recco AMS to handle flow also,btohqsg
+npnp  yea if its like AMS for Oauth2 external provider then i think its fine to separate it,btohqsg
+i just generally prefer to not spin up more containers than necessary esp if the scale of the project won't be that large,btohqsg
+Actually q confusing. He recco frontend to  be the callback and then frontend to pass params back to AMS,btohqsg
+Why not just let AMS handle everything,btohqsg
+its because of UXin the standard flow i mentioned jn  you realized frontend isn't involved in the whole thing right? so when i call the backend endpoint to get the access token  the frontend doesn't know anything ma  so the backend endpoint has to redirect on 200 okwhereas in the method he talked abt  the frontend call the backend with the authorization code request  immediately gets a response and the session is initiated  straight away update,btohqsg
+anyway second method is less secure but its not an issue  anyway the token is shortlived and one time use also  once u pass to the BE that's it,btohqsg
+either way works just see how u wanna implement it,btohqsg
+for example  when I did email verification for my site  i send my users an email with the frontend website with a query parameter for the verification token  then the token is extracted from the frontend and passed to the backend so i get instant response  so what i did was an implementation of the second method,btohqsg
+then u immediately see oh settled successfully verified no need for additional redirect,btohqsg
+If i do second method got additional boilerplate code that needs to be created for frontend,btohqsg
+you probably need another JSX to handle the page,btohqsg
+Aiya i think q okay if all my frontend gonna be react,btohqsg
+cause is another route ma  then u just create another JSX component for it lor,btohqsg
+yea if all react is ok  if its like html css then might be abit more work,btohqsg
+Yeah coz most probably hackathon/schproject wgt write html css,btohqsg
+Just import chakra theme and carry on w life,btohqsg
+you can just set a useEffect hook in your JSX to parse the authorization code  call the backend then render the appropriate content based on the response code,btohqsg
+ya siao raw html css no go nowadays,btohqsg
+yea haha just import some component lib like mui chakra slap on a few jsx and then call it a day,btohqsg

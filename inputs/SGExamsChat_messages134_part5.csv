@@ -1,0 +1,51 @@
+text,group
+Bruh I still dunno how to use & and * in C++,btohqsg
+So you tell me I also bobo,btohqsg
+* is still C  but the & one is mysterious to me,btohqsg
+i don't use cpp too much anyway,btohqsg
+well & is technicall logical AND,btohqsg
+but it's also used as an operator to grab memory,btohqsg
+in cpp you can do some magic with it to make your function pass by reference without needing to pass pointers around,btohqsg
+anyway the code is there  take it or leave it,btohqsg
+your original plan of doing everything in 1 array is....,btohqsg
+it's possible  but then you might as well be using structs,btohqsg
+Must be cuz no vectors in C I guess?,btohqsg
+If I remove the first column do u think it's possible to do an array,btohqsg
+@andrewomeYou know EEPROM? she doing also apparently,btohqsg
+Watch YouTube vids get entertained can liao,btohqsg
+Ya I rather not touch also,btohqsg
+i did throw a life boey already,btohqsg
+All I can say is  I can't help cuz too much hardware/EE,btohqsg
+I'll send u a $2 consolation prize since you helped somewhat (although I don't get it at all),btohqsg
+Hi yes please save my hypothetical soul,btohqsg
+Tldr she wants to make a mini rdbms w cpp,btohqsg
+Basically is this.Somehow need to make a mixed type 4-column array,btohqsg
+Tuple of 4 ints  tuple of 2 ints  tuple of 2ints  tuple of 5 ints,btohqsg
+So I need to do this or some version of this  basically I need something that can store data  can be edited on userend and can add rows for new users,btohqsg
+You need a UI for this or?,btohqsg
+Wtf doing this on a microcontroller wtf,btohqsg
+Your user using the microcontroller or?,btohqsg
+wait i am confused why need microcontroller,btohqsg
+Cuz her course said so I assume,btohqsg
+I don't even wanna be an engineer :'),btohqsg
+Bruh not all engineer need do microcontroller,btohqsg
+wait ah lemme finish my game then i think about it,btohqsg
+At this point I can understand why your group mates give up tbh,btohqsg
+I tot she say they write rubbish code,btohqsg
+They completely didn't do shit what do u mean,btohqsg
+Can I ask original project length,btohqsg
+If they knew it wasn't possible they would tell me like 3 weeks ago,btohqsg
+and maybe needing to implement your own resizable array,btohqsg
+They didn't even care to search until they gave me half assed code to me this afternoon,btohqsg
+My project is due TMR 1pm,btohqsg
+This should be implementable for ur project,btohqsg
+how many users are you supposed to accomodate,btohqsg
+and what kind of data we talkkng,btohqsg
+and which mc are you using,btohqsg
+Theoretically infinite but can cap it,btohqsg
+if you want to use mc you definitely need to cap it,btohqsg
+As written in the drawing  but the pin can change to all numbers,btohqsg
+data as in i assume your mc can handle char input but what kind of dsta,btohqsg
+Probably can change to all int,btohqsg
+Mixed type array [tuple of 4 int tuple of 2 int tuple of 2 int tuple of 5 int]or some equiv I assume,btohqsg
+do you have a choice to like add in components theoretically,btohqsg

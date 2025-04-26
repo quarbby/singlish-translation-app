@@ -1,0 +1,51 @@
+text,group
+But legit can do this via itertools,btohqsg
+Wah u sure is benleong or not,btohqsg
+But his solution is hard to understand,btohqsg
+If vanilla python i can only think ofIterate thru bunch of combinations listsIf l1+ln = input sumAppend to listContinue,btohqsg
+I can only think of using recursion,btohqsg
+This uses my infamous store data variable method,btohqsg
+Got another method but that one a bit hard coding,btohqsg
+No not if u use itertools,btohqsg
+Itertools combinations allows u to do it easily,btohqsg
+Got a few methods i can think of,btohqsg
+Cheat method isU put integer Lets say XIn a predefined list0 to 10 lets sayU iterate thru X - each digit in listIf the remainder in list  append it to a tuple and add it in a listRepeat for tripletsRepeat for quadruplets as many time as u want,btohqsg
+For integer k  expand (1+x)(1+x^2)...(1+x^n) and take the k'th coefficient,btohqsg
+But there's also a recurrence relation method to do it  provided you restrict your subsets to some size k<n,btohqsg
+Oh wait this just gives the number of ways there is,btohqsg
+I mean if i looking for algo confirm need use mclaurin expansion or choosing method,btohqsg
+This will work for part a,btohqsg
+Part a is number of ways,btohqsg
+This is the only non maths method using vanilla python i can think of,btohqsg
+Why dont u think of recursion instead,btohqsg
+I not comfortable w recursion lah,btohqsg
+Why do you need to do this though,btohqsg
+My 6 yrs of doing PHP seldom use recursion,btohqsg
+I dont really get his method,btohqsg
+Plus my maths not my strongest subject,btohqsg
+I shld forget learning cs :(,btohqsg
+Got one PHP method for this a bit cancerous also using a lot of if else,btohqsg
+I have a lot more of this weird shit,btohqsg
+hmm what I can think of is to get [n - 1  1]  [n - 2  2]  [n - 3  3]  ... [n/2  n/2] Then for each pair recursively generate sum_set on each pair,btohqsg
+U should go take cs lah,btohqsg
+combine the output sets  remove dups,btohqsg
+Thinking of a cool one but nothing comes to mind,btohqsg
+Take the n-th coefficient of x/(1-x-x^2) will give you the nth fibonacci number,btohqsg
+Cb u and ur helper functions,btohqsg
+Wait till u see ben solution,btohqsg
+Eh ur method also like my cheat method sia just that u use recursion i hard code it,btohqsg
+His method is my data storage method for power list,btohqsg
+I wonder that brute force soln how long,btohqsg
+Imagine the input number is sum_set(25),btohqsg
+If u use short hand about 30ish,btohqsg
+His algo also o(N²) will die for 25,btohqsg
+This chat has been taken over by the CS folks,btohqsg
+But u are discussing cs stuff,btohqsg
+Anyways why are you doing 1010FC?,btohqsg
+Is like how u help ppl w econs in study group,btohqsg
+No la i was looking through some papers,btohqsg
+Tbh 15 mins isn't enough to solve that question,btohqsg
+Ya hard to see the pattern,btohqsg
+But idk how to write it out,btohqsg
+Unless u brute force fromt eh start,btohqsg
+U brute force 15 mins also not enough to write out properly,btohqsg

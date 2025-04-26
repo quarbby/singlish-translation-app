@@ -1,0 +1,51 @@
+text,group
+Cause I put in 30k and I receive back 1549. Then I see 6% of 30k is already 1.8k le. That’s why I puzzled,btohqsg
+1. $1000 refund for unsuccessful2. $549.55 refund for excess paid on $29k notional allocated at 98.105 price.,btohqsg
+Now it seem correct. 🙏🏻 but how you know is $1k not successful,btohqsg
+Because u said u got back $1549,btohqsg
+So 94% of 30k is 28200 so they round up to 29k  is it always like that?,btohqsg
+I didn’t read the mechanism in full but if it is like ssb  how they do it some will get rounded up some will get rounded down. In order for everyone to be in $1000 pieces and everything allocated out.,btohqsg
+Got it now  thanks a lot 🙏🏻🙏🏻🙏🏻,btohqsg
+If I have both UOB one account and Stash account then better to make it empty both the account? If there is new promotion open then can I join separately each account?,btohqsg
+Means only one account is eligible?,btohqsg
+As stated in t&c  one account holder can only have participation at one time,btohqsg
+So empty one account by 30Mar 1030pm?,btohqsg
+Me doing for the first time.... Very confusing.....,btohqsg
+Some say must do today because of public holiday,btohqsg
+When you go hiking  do you walk alone the edge of cliff? 1030pm is at the edge of cliff.6pm provides a safety buffer. Of course you can do it at 7pm or before 6pm depends on your preference.,btohqsg
+Nobody knows the next promo TnC. All base on TnC of past promo. If have promo  read bank announcements on 01 April.,btohqsg
+i had 200k for 4 days...planning to $0 today..so next 4 days my account $0..MAB still at 100k,btohqsg
+Make sure you did your calculations  at most you lose a couple of $ of interest,btohqsg
+thanks bro..i did via excel..my MAB should exceed by $10..loljust sometimes duno how they count..diff from my calculations always a few dollars..,btohqsg
+i always had 100k everyday this month..then for 4 days..i had 200k..today zero out should be fine,btohqsg
+The interest is credited into your account in two transactions. First transaction is about $3.xx to $4.xx. I guess the difference you mentioned is that base interest $4.xx,btohqsg
+me and their calculated base same... it's the bonus.. they always diff from wat i count...lol,btohqsg
+The base interest has very small margin of error because it's only 0.5%. Highly likely that some of your daily end of day on your excel is wrong. The easiest error to spot is Sunday have a different end of day balance from Saturday.To be very accurate  use the account transactions instead of what you see on the account balance.,btohqsg
+Uob max transfer limit is $200k only. Any way on how to bypass this? I have slightly over 200k and wish to withdraw all of them out into another bank acc,btohqsg
+ya..i sus 31 days of DAB.. somewhere there along is diff..wat the sat and sun diff all about bro?,btohqsg
+If Saturday end of day balance is 99000  Sunday is 99000. Which means Monday needs to be 102000 to balance out.,btohqsg
+oh.....damn!... didn't know this..no wonder MAB always differ abit,btohqsg
+The moment on excel your Sunday is different from Saturday then your calculation is wrong already lol. Like I said previously  use account transactions instead of what you see on the account balance.,btohqsg
+thanks..found the culprit today liao! it's the sunday! haha,btohqsg
+they take which as end day balance?current balance right?not available balance,btohqsg
+Someone shd create a video on MAB calculation 😁 sure alot of clicks for years to come,btohqsg
+Current balance. But like I mentioned  use account transactions instead of what you see on the account balance to be 100% accurate.,btohqsg
+ok got it..suns and PHs..no movement...just take the prior days' DAB,btohqsg
+Since account transactions also include transaction date.,btohqsg
+regret didn't remove stash acc bonus interest that time..had to recalculate and stick to a silly amount of 100016 every month for the MAB..,btohqsg
+Lol it will literally be a video on how to login to banking app  opening a spreadsheet and doing + and -. Lol,btohqsg
+hi all  i’ve set up giro to pay my citi reward cc with hsbc ega  and my citi due day is 30 marchas there’re 3 non-business days before  will the giro pay in time before due? in other words  should i pay manually on 30 march?and what if the giro got triggered today and only reach citi after due date?i’ve asked hsbc and they’re not able to give a definite answer. thank yall in advance!,btohqsg
+"If its so simple just ""doing + and -""  u would be insulting many of those who had trouble computing monthly average balance properly. A quick search above would show there has been at least 3-4 chat discussions on this before..There are much more common misunderstandings that we didnt know about the bank's way of computing. Would appreciate if you could refrain oversimplifying with your expert knowledge. It hurts our feelings as beginners as we start out learning things",btohqsg
+My apologies if it sounded insulting. You can try out the accounts transaction method and see if it helps.1. Open a spreadsheet with all the days in the month you're calculating.2. Login to your banking app and take the end of day balance from last month as the reference balance.3. By default  set all days of the month to be the same balance (do not key in manually but use = in the formula).4. Periodically login to your banking app and check your transactions based on the transaction date  do not change the balance manually but calculate with + and - in the formula.5. After the last day  use average formula to get estimated MAB.6. Top-up/withdraw if you need to adjust the MAB.,btohqsg
+What is the minimum account balance to maintain in the basic uob savings account ?,btohqsg
+The difference would probably be when the bank actually records down your new balance if you had transactions in or out. If you really need to calculate MAB  just check periodically and do the necessary deposit or withdrawal to maintain your MAB,btohqsg
+if you've set up GIRO arrangement  leave the deduction trigger with Citibank and not worry about being late. hope this helps,btohqsg
+My due date is also 30th March. It already deducted yesterday.,btohqsg
+Is this your first giro deduction on this card?,btohqsg
+When did you setup your giro?,btohqsg
+Very basic rule: until you don’t see a word “GIRO” in your statement  pay manually 😅,btohqsg
+These are my notes from what i have learnt about adjusting and predicting MAB over the past month. I thought these would be useful to people starting out. Please feel free to correct me if i am wrong.(Tested for OCBC  so it might be different for other banks).1. Ledger balance number updates immediately after each transaction that happen  but not necessary used for bank's MAB calculation2. Only ONE single ledger balance number is used by bank at the end of a working day. The snapshot of the ledger balance happen at different time on each working day for different banks3. Converse to 2.  the ledger balance (in the eyes of the bank) doesnt change at the end of a non-working day. ie. the previous working day's ledger balance will be assumed at the end of a non-working day.4. if calculating MAB using transactions  note that transactions will only be recognised by bank on a working day.5. converse to 4.  if the transaction happen on a non-working day  the transaction will be recognised only on the next working day. ie. it will be as if the transaction happened on the next working day.6. In order to adjust for the last day's MAB  best is to do ledger balance adjustment on a few *working days* before end of month  and ensure no transactions occur until end of month7. In eyes of banks  the MAB number is updated everyday  but the ledger balance only updates at end of a working day8. To ocbc  sundays and public holidays are non-working day (note: saturdays are considered working),btohqsg
+i received sms informing successful setup on 15 March,btohqsg
+Should be fine but if on 30 you don't see the transaction then just manually pay already,btohqsg
+my statement came (4 march) even before giro setup(15 march)…,btohqsg
+For the SC bonus saver account  is there any walkaround with the salary crediting?,btohqsg

@@ -1,0 +1,51 @@
+text,group
+Failed after few days when fund deduction.NoNo,btohqsg
+Likely is your card was locked? If not  only Citi CSO can tell you the reason.,btohqsg
+i will check with them again. thanks alot,btohqsg
+Can I know ur process?So every end day around 1030pm onwards  u will record the balance of the day? N do it every single day eh?Then next month u will just do a new column n see tt the daily average has a $500 difference from the previous month?,btohqsg
+No need. As and when you feel like doing it  or you know exactly what are the transactions you going to have this month  just log into ibanking and record it on excel and calculate the amount to top up/withdraw.I usually do it once a month only  on the first day. You can do another round on the last day as well just to be sure.,btohqsg
+No need record everyday  it is actually very simple.On ocbc ibanking web it tells you A) “Current Month's Average Daily Balance” and B) “Average daily balance increase vs. last month”.Assuming u log in today  and see A) 100 100 and B) 400.It means:- last month MAB is 99 700 and this month’s MAB  must be > 100 200- then u just need to pluck into excel. 1st - 13th dec: 100 100- then just find an amount to put from 14th-31st dec such that the avg will be 100 200- that number will be $100 272.22- so u just need to have 100 272.22 from today till end of Dec,btohqsg
+There is simple math calc to get 100 272.22. In any case can just use chatgpt to calc for u 😉,btohqsg
+This is the excel I made. Target cell for each month is previous month MAB + 500. Colored cell is current month MAB - target. Green color shows that current MAB - target >= 0.1.Then just have a daily transaction column. If you have a transaction  the daily balance will adjust automatically.,btohqsg
+Can see that I usually top up on 1st day on the month  if it is a PH  or somehow I forgot  just top up on any day. And the top up amount may not be $500 even if I do it on the first day. On Oct  the first top up of 495 on 2 Oct already makes the Oct MAB 500.1 more than Sep MAB. But as I have a deposit of $180 on 20th and did not withdraw on the same day  I need to withdraw more later ($240.1 on 23 Oct).,btohqsg
+got use autosum and auto average? haha,btohqsg
+Just simple sum/average formula. The colored one took me more time to do it.. 😁,btohqsg
+u never count for 29 days? Leap Year this coming feb..haha,btohqsg
+This is my old Excel. My new Excel will auto count number of days based on the name of the month. 😁And can actually dun care about number of days. Just leave the cell empty if that month don't have the date. Average function in excel will cater for that...,btohqsg
+hi  i noticed my standard chartered jumpstart for debit card for transactions being made with amaze is not counted to the cashback  does anyone know if this would be correct?,btohqsg
+U mean topping up amaze wallet?Or linking debit card to amaze?!,btohqsg
+ooo like making transactions with amaze being linked to sc jumpstart debit,btohqsg
+Wow I didn’t know u can link a debit card to amaze. Let’s see what other users say.,btohqsg
+i will categorise under like general items like bedsheets and massage chair,btohqsg
+but the amount wasn’t reflected in the cashback and noted the large discrepancy that i was expecting for this month haha,btohqsg
+What is the MCC shown on Amaze for the transaction?,btohqsg
+i just checked at the amaze app it is 5734,btohqsg
+This is strange. Unless you've reached the $60 cash back cap. Otherwise think you can contact SC to check on that.,btohqsg
+yea really weird  okie i will check with sc to see what’s their take on  thanks!,btohqsg
+Hi  just opened a UOB one account recently. May I ask if I use the UOB card to pay for my insurance  does it account to the $500 spending?,btohqsg
+You can search chat history using “Uob one account insurance”. There are multiple data points on this.,btohqsg
+Hi  would like to check if I use DBS WWC buy air ticket atTrip.com  is it eligible for 4mpd? Thanks.,btohqsg
+Hi  i just applied for SCB Simply Cash via SingSaver. Will my gift be confiscated if i cancel the card immediately after i collected it from SingSaver?,btohqsg
+You can use Heymax to check. It is a very useful free tool to let u know which credit can earn rewards.https://heymax.ai/search,btohqsg
+Alternatively  you can search chat history using “Wwmc air ticket”,btohqsg
+Just checking… if previously account was closed  then now want open again  is it considered new or existing user ah?,btohqsg
+dun even need to be recurring,btohqsg
+An update: Finally managed to call them… CSO was helpful and instantly terminate internet banking after verifying that there is no more card and bank accounts with them.,btohqsg
+Hi  I am using UOB Preferred visa for shopee Spay later  realised that only earned the base mile  X9 bonus mile is not entitled.Is it same apply to other card? HSBC  KR UOB bonus stack?,btohqsg
+Hi. Anyone knows if paying Google ads is eligible for miles collection using credit card?,btohqsg
+Do u reset your amount back to 100k some day as it builds up beyond 100k?  Thks,btohqsg
+Moomoo Invest Smarter: Get your starter kit up to S$680*🐮 Sign up athttps://hmsg.link/sgmoomoo🌟 Welcome offers for new users 🌟1️⃣ Worth up to S$3805.8%* p.a. Guaranteed Returns in Moomoo Cash Plus (max S$80 000 subscription for 30 days)2️⃣ Worth S$70 (1 Stock Bundle of 5 fractional shares)Deposit S$3 000 & hold for 30 days  with 3 Buy trades3️⃣ Worth S$210 (3x Stock Bundles)Deposit S$10 000 & hold for 90 days  with 8 Buy trades4️⃣ Get up to S$20* Cash Coupon (S$2 daily for 10 days)Deposit S$100 and perform 1 buy trade [My exclusive link only]💵 Max Optimisation = S$680* of rewards when you deposit S$10 000  perform 8 Buy trades  subscribe to S$80 000 of Moomoo Cash Plus & hold deposits for 90 days🔸 Remember  don't withdraw the cash deposit until you have met the conditions🔸 *T&Cs apply  please read them in full.🐮 Sign up for Moomoo SG athttps://hmsg.link/sgmoomoo👉 Discuss more athttps://t.me/honeymoneysg👉 More referral athttps://t.me/sgpromocode,btohqsg
+Hi  can anyone advise after I submitted the participation form  do I still need to wait until I receive any confirmation sms/email for my eligibility from uob before I can start to deposit the money to my savings account?,btohqsg
+Hi all  anyone knows where can i locate my cashback for uob one card? Last 3 month i clear all $500 but havent seen anything yet,btohqsg
+With a simple search  this was what I foundhttps://t.me/HoneyMoneySG/154810,btohqsg
+hi all. planning to open uob one savings account  and credit my salary thereAlso planning to spend on uob one visa credit card to meet the criteria for the 5% IIR on the uob one account. I don’t care for the cash back on the uob one visa cardQuestion - if i set up recurring payments e.g telephone bills  internet bills  conservancy fees  utilities etc on the uob one visa card that adds up to $500 per month  will that fulfill the min spend criteria for the uob one account to get the 5% IIR?Thanks!,btohqsg
+there will be confirmation email..deposit funds in..anytime before the closing date,btohqsg
+conservancy fee no  the rest ok. The exclusions for card spend for bonus interest and rebate are the same  except insurance count to bonus interest but not rebate. Why not clock for both?,btohqsg
+i just want to “set and forget” i.e automate that $500 spending req as much as possible 😅 only aim is to meet the bonus interest criteria,btohqsg
+bro..one account don't need to maintain MAB same figure as previous month  or higher right?unlike the stash accout  i meant..,btohqsg
+Hi morning  what is the best miles card for honeymoon about $10k spend?,btohqsg
+up to u  anyway u would have clocked for rebate also by changing statement date to follow calendar month and min 5 transactions in the month.,btohqsg
+which month? what kind of merchants?,btohqsg
+Anyone know if Fave  NTUC app  McDonald app  ShopBack app if I use the credit card payment (not via Apple Pay) are these considered online payment for UOB evol? Always spend a lot but didn get full $40 ($20 Apple Pay and $20 online payment),btohqsg
+Does KF miles convert to elite miles which contribute to the tier upgrade? If not are there other ways other than flying? Thank you.,btohqsg
+thats what i thought too  i remember you can only earn elite miles from flying,btohqsg

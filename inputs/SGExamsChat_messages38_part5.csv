@@ -1,0 +1,51 @@
+text,group
+Now assume you got a general distribution,btohqsg
+Just fit N gaussians to that distribution,btohqsg
+Siao don't test each other's day proficiency leh,btohqsg
+Not indepth  juz google.Long story short  you are finding a low dim version of high dim data,btohqsg
+Does this have anything to do with central limit theorem,btohqsg
+Basically u are just finding the most relevant attributes(principal components) which explains most of the variation in the data?,btohqsg
+I'm lazy and google provided thishttps://stats.stackexchange.com/a/134283,btohqsg
+I wouldn't say it's 'most of the variation',btohqsg
+You are finding a low-dim version of whatever,btohqsg
+If you talk about variation  you need a special 0-vector  or you have predefined distances,btohqsg
+Ok finance guy lost in data,btohqsg
+CLT is the statement that if you have many means  and that said means have finite variance  they will follow a gaussian  with a specific variance too.,btohqsg
+Actually is data science more stats or comp sci driven,btohqsg
+Of course stat concepts are important but then algorithm efficiency is impt as well,btohqsg
+Com sci just a way to put the math into application,btohqsg
+How to say? Stats is maff. You can develop math at this point still.CompSci most relevance is in algo. If your algo is trash  it means your math can't be implemented,btohqsg
+Eh we pleb just use library ma no?,btohqsg
+Library is there cos it covers common application ma,btohqsg
+Means more likely than not whatever u trying to do got library,btohqsg
+Very likely if you want to go conference imo,btohqsg
+UNless you using the fattest general-use libraries  like TF/PyTorch/Keras,btohqsg
+Just solve problem not do research,btohqsg
+TBH TF/PyTorch/Keras all so fking fat  documentation massive huge that you can earn a living by just building off them for at least this lifetime,btohqsg
+U doing com sci rn har,btohqsg
+I mean all unis teach tensorflow now,btohqsg
+Bruh 5 months ago where got obsolete,btohqsg
+Ok la but not as widely used,btohqsg
+Huh really? I never learnt TF for a single day  tho TBH I not in CS-ey course,btohqsg
+Yea all machine learning/deep learning mods in nus uses tensorflow,btohqsg
+All I can say about TF is that it has really complicated requirements.txt - you need someone who's ALREADY used to cloud/dev environments,btohqsg
+And those are already a rarity within uni students,btohqsg
+I mean like you can do that  you are at least a basic Software Engineer alr,btohqsg
+interesting  IDK if the profs understand what they teaching  and if the students understand what they learning,btohqsg
+They teach more of the theory la,btohqsg
+Anyone knows what's the likely progression of salary for software engineer,btohqsg
+lmao theory  you can even break down to 'simple' NumPy alr,btohqsg
+The point of TF is to generalise everything,btohqsg
+Dunno how to be more specific,btohqsg
+If you go SV of course fast,btohqsg
+I've no knowledge abt the industry,btohqsg
+Can just focus on FAANG tbh,btohqsg
+leetcode is somewhat public I think,btohqsg
+IDEK how far Google L4 is from the top,btohqsg
+Can see the recent ges survey,btohqsg
+Most comp sci grads end up as software engineers,btohqsg
+That one doesn't show progression ma,btohqsg
+At least it is a gauge how the industry is doing,btohqsg
+Huh I doubt it ba  unless the 'SWE' is a super generic term,btohqsg
+For nus comp sci i think it is quite accurate though,btohqsg
+Software engineer is a v common path,btohqsg

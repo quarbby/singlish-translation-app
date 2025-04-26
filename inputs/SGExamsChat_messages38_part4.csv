@@ -1,0 +1,51 @@
+text,group
+Must you use MatLab? There are VERY FEW reasons I can think of for forcing matlab.,btohqsg
+I mean some uni mods do teach matlab in a linear algebra mod,btohqsg
+Python can do most of the stuff,btohqsg
+as long as u dont game or use anyth that needs high processing power,btohqsg
+That's because the prof very outdated,btohqsg
+Numpy is more for data science,btohqsg
+On the other hand  if you are doing extreme amounts of number crunching  py lags far behind,btohqsg
+Linear al  vector cal  stats all can use numpy,btohqsg
+ive been using mac for 4 years no problem for me  just some games cannot run,btohqsg
+??????????????????????????????functionally they are not very different,btohqsg
+Py wins in terms of on the fly experimentation,btohqsg
+Again  this is only if you are interested in certain specific R pkgs,btohqsg
+ive been using my laptop for 5 yrs but its starting to die alrd,btohqsg
+Matlab vs numpy is a stupid discussion,btohqsg
+R has terrible memory management from what I see/tried,btohqsg
+Still it is efficient for generating visualisations,btohqsg
+I really don't see how you can pre-know if you will use MatLab and/or can justify the massive software cost it entails,btohqsg
+Lol I thought we discussing what pc to buy,btohqsg
+Perhaps it’s time to start talking about Mac vs windows again,btohqsg
+Now we argue about which language to use,btohqsg
+Very simple  just stick to FOSS,btohqsg
+Python and R are both FOSS,btohqsg
+Julia too if you're into that,btohqsg
+I'm thinking he doesn't know shit about what u are talking,btohqsg
+mac windows debate is retarded  just use what works well for u and what u can afford,btohqsg
+ok ok I simplify: if it's NOT FREE  DON'T USE IT,btohqsg
+Yes  it means you can SAGE but not WolframAlpha Pro,btohqsg
+why so many data people here,btohqsg
+Data is the next oil lol,btohqsg
+Many ppl here doing data analytics？,btohqsg
+Starting to learn but not expert at it,btohqsg
+Those two things sounds highly subjective,btohqsg
+As long as your machine can run .js,btohqsg
+If u just want to learn the coding is easy,btohqsg
+I know the coding. I wanna know the math behind it,btohqsg
+I did use it for my sch computers,btohqsg
+It was not exactly user friendly for me,btohqsg
+The stats and math behind machine learning need to read up,btohqsg
+Or watch andrew ng on youtube,btohqsg
+NIPS comes up with new shit every year,btohqsg
+Go online download a book on it,btohqsg
+Doesn't mean I know what mixture gaussian is,btohqsg
+If you can tell me you are updated on NIPS pls teach me,btohqsg
+Anything you say can be and will be used ahainst you,btohqsg
+It's a mixture of gaussians  and I assume it's basically a convex combination of gaussians,btohqsg
+You get a 5-centred gaussian and another gaussian centered at -0.5  You assign non-negative weights adding up to 1 to both of them  this is a mixture gaussian,btohqsg
+General mixture gaussian means you have N (for some int) gaussians  all with weights. If you can do negative weights you are magic liao  cuz AFAIK only convex combi (aka weights adding up to 1) makes sense,btohqsg
+This group become data science liao,btohqsg
+ok long story short WHY useful?Cuz 1 gaussian is SHIT at fitting data,btohqsg
+Can u explain principal component analysis,btohqsg

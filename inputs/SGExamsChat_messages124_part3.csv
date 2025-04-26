@@ -1,0 +1,51 @@
+text,group
+Practicing tells u where u r lacking  then consult tells u how to fix your issues,btohqsg
+It’s a cycle of consolidating and updating your knowledge,btohqsg
+Like no have alot consultation eh,btohqsg
+Anyone frm Private dip here? Or joining soon,btohqsg
+What’s the point of a school with teachers you can’t talk to,btohqsg
+May as well just get tuition instead,btohqsg
+Private school is like that one,btohqsg
+Using R programming  create the function MyFunc that receives a given vector  and returns a new vector contains all elements of the first vector without duplicate. For example: MyFun(c(2  2  3  1  1  0))  result : [1] 2 3 1 0.and some modelling question from scratch  but easy dataset,btohqsg
+Any idea on how to tackle this,btohqsg
+Compile the data into a listLoop over each index to check duplicatesRemove duplicatesSave new lsit in another variable,btohqsg
+As for how u would loop over to check got a few ways,btohqsg
+Id do something using multiple variables,btohqsg
+Store original list in var1Make a copy of var1 and remove a certain element with a unique indexThen if exists the elemet in the list where it is removed  thus it has a duplicate. Remove it and then recurse,btohqsg
+Not sure about R but python has a count method/functuon that does this for u,btohqsg
+So does most languages i think maybe u should check documentation,btohqsg
+I cant take you srsly with that username,btohqsg
+You werent the one who asked the ques. I dont care what you take me as.,btohqsg
+"Bro haha lim tean ""whats common between pap and hdb?""""They are both worthless in the long run""",btohqsg
+I wanna see tcb  jamus  csj  lim tean in parliament,btohqsg
+I might actually start watching debates,btohqsg
+LTK's Titanic meme was still the most lit imo,btohqsg
+Holy crap imma check that out,btohqsg
+How did I miss all these,btohqsg
+Has anyone tried the app “signal”,btohqsg
+Honestly you should be able to do this,btohqsg
+Perhaps u could offer a non recursion solution. Instead of merely criticising.,btohqsg
+MyFun <- function(x){if (isTRUE(all.equal(x  c(2 2 3 1 1 0)))){return(c(2 3 1 0))}}MyFun(c(2 2 3 1 1 0)),btohqsg
+Recursion is useful if you need to repeatedly apply some function again and again  starting from whatever the input is.In this case I don't see how you need more than 1 parse,btohqsg
+Thanks  I worked hard to find the relevant functions in R Core,btohqsg
+My function applies the helper functiom repeatedly. Thus recursion. I am aware what recursion is used for.,btohqsg
+Exactly why would you need to repeatedly use a helper function,btohqsg
+Cause i like it? I am more comfortable with it ? It is ONE of many possible ways?,btohqsg
+Thats a weird thing to ask.,btohqsg
+Plus i also said that i am not aware of in built functions of R,btohqsg
+I mean if that isnt enough then i guess nothing would satiate u.,btohqsg
+It doesn't matter. It's not a hard question.,btohqsg
+Woops forgot to show my enthusiasm.,btohqsg
+By 'not a hard question' I mean that asking here  plus asking about another 'modelling question from scratch' means it's pretty pointless to answer.,btohqsg
+Anyway the only issue I have is that in a naive method of doing the question in R  it probably won't use space well.,btohqsg
+I guess that doesn't matter if the asker somehow can't think of a way of making the function,btohqsg
+MyFun <- function(x){if (isTRUE(all.equal(x  c(2 2 3 1 1 0)))){return(c(2 3 1 0))}}MyFun(c(1 1 1 1 1 1))Oh wait this doesnt work. Perhaps because it is hardcoded.,btohqsg
+Well i guess it shouldnt be hard to google a modular version of this.,btohqsg
+Or perhaps one that works with any input.,btohqsg
+What do you mean it doesn't work?,btohqsg
+Also I don't see why you need to include your own comments in the ``` but/shrug- it's supposed to be a code block,btohqsg
+@junhengggggghere have something to laugh at.,btohqsg
+Do you know why it works?,btohqsg
+Do you know why this doesnt work ?,btohqsg
+It's because when anyone copies and paste it and submits it to their instructor  then theyobviously get it wrong,btohqsg
+I find that a lot more important for a question like this,btohqsg

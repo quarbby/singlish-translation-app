@@ -1,0 +1,51 @@
+text,group
+What's the diff between USB c and thunderbolt,btohqsg
+USB C is a type of connectorlike micro USB is actually USB Micro Bthe usual computer one is USB Athunderbolt is a hardware interface by Intel that allows wtv u connect to have direct access to PCIe lanes while also acting as a DisplayPortand because it can directly tap on PCIe lanes  it can support stuff like external GPUs,btohqsg
+Thunderbolt 1 & 2 actually used mini display port as its connectoronly Thunderbolt 3 & 4 uses USB C,btohqsg
+So that mini displayport connector on my old laptop,btohqsg
+Can actually be used as thunderbolt?,btohqsg
+wait how does remote desktop work for individuals,btohqsg
+It needs to explicitly have thunderbolt support,btohqsg
+it just shares the desktop from the host to the client computer,btohqsg
+u setup remote desktop (parsec  TeamViewer  wtv) to be able to allow remote connections without anyone needing to press allow on the host side,btohqsg
+typically remote desktop solutions like TeamViewer or AnyDesk will encrypt the data  then route it through their servers such that it reaches you,btohqsg
+so usually this can only happen if both sides are connected to the same account  otherwise it's insecure as fuck,btohqsg
+ahhh so what are the advantages of this for students?,btohqsg
+if you're working with multiple computers it can be useful,btohqsg
+you can also use it to transfer files to and from computers,btohqsg
+Or like mentioned before  you can have a powerful computer and a relatively cheap/weak laptop,btohqsg
+Whenever you need your desktop to do some stuff you can just remote in and work,btohqsg
+ok wait i noob one ah  but i can just get a desktop at home (which for equivalent specs is much cheaper than a laptop) then i just use a cheapo laptop when im working outside but still get the same computing power as my desktop at home?,btohqsg
+wah then why dont more ppl do this?,btohqsg
+Assuming you have a internet connection,btohqsg
+It's not exactly required for most work flows,btohqsg
+plus is singapore is like everywhere got connection,btohqsg
+if i can donate my gbs to u i would la,btohqsg
+Like if you're just doing excel and word your laptop will work just fine,btohqsg
+and it's not exactly intuitive to implement it into any random Joe's workflow,btohqsg
+U can just donate the $$,btohqsg
+mine is like 18 for 50gb?,btohqsg
+data is cheap   but the amount of data u need to download/store stuff makes it expensive in the long run,btohqsg
+Oh and yeah you need set up a bit,btohqsg
+Cause if computer sleeps you probably can't remote desktop unless you enable wake on lan,btohqsg
+and wake on LAN is a bitch,btohqsg
+You can rent a server online without having the actual hardware,btohqsg
+or u can just download more RAM,btohqsg
+anyone can give tips for eae writeup pls,btohqsg
+And write why you wanna go,btohqsg
+And write what you aim to get out of the course,btohqsg
+im in a pretty general course,btohqsg
+Yea then just put what do u aim to get out the course in poly,btohqsg
+Why does that affect why you want go infocom sec,btohqsg
+You can always take part in coms uk -?,btohqsg
+There's nothing to be unsure about  being in ITE doesn't mean you cannot want to be in infocom sec,btohqsg
+Is SjChO still on this year?,btohqsg
+kenna rejected frm NUS comp science 😪,btohqsg
+I just lost a potential classmate :(((,btohqsg
+were u from poly or a levels,btohqsg
+ah  u got thru direct right,btohqsg
+my GPA fell short  I was hoping my ABA could save me but it didn't,btohqsg
+even last year sem 1 there were offline lessons for cs,btohqsg
+What does Ben leong have to do with this,btohqsg
+and I'll be pretty irritated if CS is the only fac with in person lessons,btohqsg
+i think he's very involved in cs curriculum,btohqsg

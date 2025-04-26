@@ -1,0 +1,51 @@
+text,group
+Singapore uni they will require an O level cert  for quite num of the courses. Unless you went through pfp then different story uh,btohqsg
+You can try private uni not sure if they allow but no harm trying,btohqsg
+And  dont quote me on this,btohqsg
+can also try email the uni of your interest about it and see what they say,btohqsg
+I know q alot of courses that requires Os,btohqsg
+yeah but maybe they can consider his circumstances or smth or advice him,btohqsg
+I am thinking: if you are able to do digital marketing well  you don't really need a university cert,btohqsg
+there are probably a few that aren't looking for it.eg Maneuver Marketingand WordPlay:https://www.wordplay.sg/But need to check if they are hiring.,btohqsg
+Should have many more. Just need to search hard enough.,btohqsg
+As a guideline  because you are new to the scene  you could probably do up a website to market yourself.In a way  I think it will act as a unique form of resume on what you are capable of.,btohqsg
+The key for yourself will likely be how to stand out (since that is about marketing)  what is unique about your skills (that is marketing too) and why you may fit.,btohqsg
+Ideas may also include doing a quick marketing video (could be done using powerpoint I guess) or something unique  and upload onto your website and youtube.On your printed resume  you could include a QR code linking to it.,btohqsg
+clicked the link  saw the first testimonial was from our great Imran Md Ali of Youtube greatness xD,btohqsg
+just think from the hiring manager's perspective. out of 20 applicants  most with degrees  what can you offer that they don't get from their degree? they're looking for people that can deliver consistent work performance  and with most uni grads you have a much lesser chance of a bad hire because they grind through a few years on this field of study  which means they are consistent. with a good portfolio  you can prove you have that  and much more. and they might take their chances on you because they have more leverage on you to negotiate salary over uni grads that demand 3k-4k fresh out of uni with no experience,btohqsg
+This is the another perspective to consider 👍,btohqsg
+If its not too personal can i ask how did u find a job in SG at age 14 if u were from overseas?,btohqsg
+U can get a job at mcdonalds in singapore if ur not in singapore?,btohqsg
+Oh is that not what he was implying?,btohqsg
+yall no sch meh? tmr got block tests go study lil kids,btohqsg
+Fried Ice-cream at Camp 3 is a hit.,btohqsg
+ok guys  i got to study  tmr got work LOL,btohqsg
+so glad i dun have to see this for another to years,btohqsg
+anyone has a hunch on when clubs are reopening,btohqsg
+MOH Holdings (MOHH) will be having a webinar this Friday  7th Jan from 3 to 5pm featuring their Nursing Scholars!Join in if you're interested to find out more about MOHH's various Nursing Scholarships and engage with the scholars! Register here:https://www.eventbrite.sg/e/integrated-nursing-and-community-nursing-scholarship-information-session-registration-195745047707?aff=sgexamshttps://www.instagram.com/p/CYEPcqvF-5q/?utm_medium=copy_linkRules and regulations,btohqsg
+Are you a secondary school student interested in pursuing Psychology after graduation? Interested to understand what it’s like to study Psychology in the classroom and your career opportunities afterwards? If so  join SPS Youth Wing for our fun-filled crash course to dive headfirst into understanding Psychology in Singapore! Through interactive games and sharings from seniors  we welcome you to explore psychology with us 🧠🔗 Register before 7th Jan 2022 (Fri)  11:59pm to guarantee your spot! Sign up athttps://www.tinyurl.com/spsywexploringpsych,btohqsg
+[FREE TICKETS FOR ALL SGEXAMS SUBSCRIBERS]❓ Have you ever wanted to start your own business but too worried to take the first step? Unsure about how to execute your idea that can potentially change the world? Fret not  we've got you covered!🔶 For 2 DAYS on 15-16th Jan 2022  UNICON  organised by NUS Entrepreneurship Society  will stream over 50 speakers  consisting of hyper-focused panel discussions  fireside chats  keynote speeches  and live Q&A sessions to help take your business and entrepreneurship skills to the next level!🕹 Interact virtually and network on our interactive platform GATHER!‼️ SIGN UP NOW USING PROMO CODE (SGEXAMSNES) to claim your FREE TICKETS‼️💻 SIGN UP LINK ->bit.ly/UNICON2022|| OFFICIAL WEBSITE ->uniconglobal.com📢 Stay connected with us on IG (instagram.com/nesunicon) where we are giving away a SECRETLAB TITAN EVO 2022 (worth $609)  so hurry on over before our giveaway closes on 8th January 2022  2359! SIGN UP FOR 2 EXTRA ENTRIES TO THIS GIVEAWAY!!,btohqsg
+Hey everyone  hope you have been well! ✨EntreConnect is a 2-day event for students interested inentrepreneurship & business! This event is jointly initiated by students from various Junior Colleges and SGExams. It is a two day online conference  featuring 8 curated talks by speakers from renowned institutions and start ups  covering topics such as studying the degree (Local  overseas & double degrees)  creating a startup and more!As these talks have separate sign ups  you can choose to sign up only for specific talks you are interested in. The details are as follows:Date:29-30 January 2022Time:9.00am - 4.30pm (Sat)  8.45am - 1.45pm (Sun)Platform:ZoomRegistration closes on 15th January 2022.  Click the link to register:https://forms.gle/cgcnx3468sYMJryn8For more details:Instagram:@entreconnectconferenceWebsite:https://entreconnect.wixsite.com/businessThank you and we hope to see you there!- Posted on behalf of EntreConnect OT '21/'22Rules and regulations,btohqsg
+hi guys  this is for my programming algorithm  got a question  when it comes to sudoku  the general one is a 9x9  but in a 4x4 (numbers are 1-4)  what is the minimum number of numbers that should be present for the sudoku to be solvable?,btohqsg
+Usually there isnt an algo way to do it,btohqsg
+For a 9x9 puzzle the most efficient generating algo works by removing numbers,btohqsg
+Then to ensure there is only a unique solution to the puzzle,btohqsg
+U remove a fixed number after which u can start testing by creating a solver,btohqsg
+And checking if there are multiple solutions,btohqsg
+U “backtrack” to the point where u removed the number that caused u to have multiple sol and dont remove it,btohqsg
+Repeat until all numbers have been tested,btohqsg
+Why i say fixed number is because u dont have to test for removal of 1 digit or 2 or even until 12 if im not wrong,btohqsg
+So it makes it a bit more efficient,btohqsg
+so that means when they asked us to find a flaw i can say that is the flaw right?,btohqsg
+because they take in any number they wanna remove,btohqsg
+That is how most soduku apps work la hahaha,btohqsg
+If ur project or mod has diff requirements,btohqsg
+Then u need to think why ur prof craft the ques that way,btohqsg
+Maybe he wants u to think or consider someth,btohqsg
+ours just pseudo to create a completed then remove n number of items,btohqsg
+Which is how its done in most apps,btohqsg
+Basically if u want to know,btohqsg
+so i can just say that we cant test whether the puzzle is solvable,btohqsg
+How many numbers u can have,btohqsg
+Im sure from a maths pov there could be other criterias that need to be considered,btohqsg
+That one can ask CS ppl or@cauchycriterionmaths gods,btohqsg

@@ -1,0 +1,51 @@
+text,group
+Save me plz  my groupmates are useless,btohqsg
+what do u need to do,btohqsg
+I have to fucking reprogram the entire thing by TMR 1pm :'),btohqsg
+what do u need the array for,btohqsg
+Making a food dispenser that has user and admin settings,btohqsg
+Yeah but the array contents need to be able to edit by the cell,btohqsg
+Or at least by the row or column,btohqsg
+I have no idea how to do that,btohqsg
+If I get saved I'm buying bubble tea for whoever helped the most 👉🏻👈🏻,btohqsg
+Sian no one can save me ah,btohqsg
+I'm broke and I don't live with my parents  can u like have mercy,btohqsg
+Not many people know C++ here and the ones who do probably won't help >_>,btohqsg
+you asking how to initialise or how to edit and modify,btohqsg
+Shouldnt u make it a varchar then,btohqsg
+B o t h would be great but mostly edit and modify,btohqsg
+Might be useful if you give example c0de,btohqsg
+Arent u proficient in cpp too,btohqsg
+I am nowhere near 'proficient' lmao,btohqsg
+I still have to complete all the extra function in function :'),btohqsg
+your 2d array you label the columns starting from 0 left to right,btohqsg
+rows top down starting from 0,btohqsg
+arr[0][0] is then the top left most cell,btohqsg
+arr[0][1] is the cell on its right,btohqsg
+I google this I get a microcontroller of some  kind?,btohqsg
+I'm mostly concerned if I can put multiple characters inside each little cell,btohqsg
+Or will I need multiple arrays,btohqsg
+Multi chars as in a string?,btohqsg
+each cell is a unsigned char,btohqsg
+Unless you init your array to hold that many subarrays then no,btohqsg
+Okok let me draw out what I'm trying to achieve,btohqsg
+This is more C than C++,btohqsg
+yes you can create a 2d array of chars to make it hold an array of strings,btohqsg
+yeah lol if cpp i'd be using vectors and strings,btohqsg
+How does the program know the memory size den,btohqsg
+you have to make the row size the length of the largest string,btohqsg
+and you use null terminators per row,btohqsg
+Why array  vector.push_back is what E V E R Y O N E suggests,btohqsg
+Avtually i might have what u need or smth similar,btohqsg
+If whay ure asking is smth like a tile,btohqsg
+Where in a tile map u can asdign numbers,btohqsg
+And the numbers mean diff things,btohqsg
+Dunno  need question asker to really clarify end-goal,btohqsg
+Also microcontroller big sad  niche area,btohqsg
+It's an even more niche area than general programming btw.,btohqsg
+It's very close to the silicon,btohqsg
+So I need to be able to add new rows,btohqsg
+Cant u just use a rdbms for this,btohqsg
+@Alexandra_WildeCan you use vectors? Dun think arrays will work >_>,btohqsg
+i can only recommend that you use a struct,btohqsg
+Nope  c++ only cuz that ain't in my sllybus,btohqsg

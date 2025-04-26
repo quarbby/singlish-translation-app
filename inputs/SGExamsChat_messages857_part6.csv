@@ -1,0 +1,51 @@
+text,group
+Actually can get a small plushie of Si Yan made then if u wanna curse him for tutorial u get pins and needles,btohqsg
+Later he end up three timing,btohqsg
+but i’m actually a good TA,btohqsg
+"""was i a good TA""""no""""I was told you were the best""",btohqsg
+Because I am using a black background,btohqsg
+Because I am in my room,btohqsg
+Iestin pls collect your lover thx.,btohqsg
+I just wanted to see your room,btohqsg
+Why do u have a noose on your celling ready?,btohqsg
+He got test on Thursday wan us keep quiet,btohqsg
+but you also don't need an A,btohqsg
+self fulfilling prophecy to pretend to study and feel good about myself,btohqsg
+but then i'll end up not doing well anyway lmao,btohqsg
+No need ce yan  you need si yan,btohqsg
+it wasnt me it was milo,btohqsg
+i am legally blind in public i will miss someone even if they walk in front of me,btohqsg
+Am attempting to plan materials for H2 Math : Inequalities involving quadratic   cubic and rational functions. Hopefully can be sufficiently good as end product,btohqsg
+Ahh like unable to detect ppl in public ?,btohqsg
+The number of spam bots is alarming,btohqsg
+Hi guys whys my code in red wrong,btohqsg
+like you by right could use ‘ instead of “ so if you wanna display it as just a text,btohqsg
+you add \ in front of it,btohqsg
+"Certainly! Let's analyze the Python code snippet and the error message to pinpoint the issue and provide a solution.Problem:The error message ""SyntaxError: f-string: unmatched '('"" clearly indicates that there's an issue with the parentheses within your f-string. Specifically  the interpreter is finding an unmatched opening parenthesis somewhere in the expression you're trying to format.Code Breakdown:The problematic line is:print(f""((int(input(""What's x?"")))+(int(input(""What's y?""))): )"")Let's dissect it:* print(f"" ... ""): This is an f-string  used for embedding expressions directly within strings.* (( ... ) + ( ... ) :  ): This is the core of the issue. You have multiple nested parentheses  and the colon "":"" and comma "" "" inside the f-string are being misinterpreted due to the unbalanced parentheses.Solution:The fundamental problem is that you're trying to perform addition and then potentially use the result in a format specifier (indicated by the colon "":"") within the f-string. However  you're not doing it correctly.Here's the corrected approach:x = int(input(""What's x? ""))y = int(input(""What's y? ""))result = x + yprint(f""{result}"")Explanation of Correction:* Separate Input and Calculation: We first take the input for x and y as strings and convert them to integers using int(). Then  we calculate the sum and store it in the result variable.* F-string for Output: In the print statement  we use an f-string to directly embed the value of the result variable.  Since we just want to print the value  no further formatting is needed.How to Run in Colab:* Enter Code:  Paste the corrected code into a Colab cell.* Run Cell: Click the ""Play"" button to the left of the cell.* Input: You'll be prompted to enter values for x and y.  Type in the numbers and press Enter after each.* Output: The sum of x and y will be printed as the output.Example Interaction:What's x? 10What's y? 2030Additional Notes:* Error Prevention:  Always try to break down complex operations into smaller  manageable steps. This improves readability and reduces the risk of syntax errors.* Debugging: When you encounter errors  carefully examine the error message and trace it back to the specific line of code. Use print() statements to inspect intermediate values and understand the flow of your program.If you have any more questions or need further assistance  feel free to ask!",btohqsg
+you might need to take some notes from certain briefings (subj combi / cca / talks) so its good to have a notebook or PLD! 👍🏻,btohqsg
+This is for JC ori is it or?,btohqsg
+First day of ori quite normal to see ppl not being social,btohqsg
+"as long don't have funny funny ""sexual"" suggestive games i think should be ok lol.",btohqsg
+But rither ways still one must take effort to socialise,btohqsg
+Also the ori grp you are in for your first day of ori IS NOT YOUR CLASS,btohqsg
+Something like that. Just dont overdo it to the point you scar them for their jc life,btohqsg
+or just being kicked out of JC.,btohqsg
+"And even if you dont get ""friends"" in the end of ori  you can still socialise when you join your class or when you do ccas",btohqsg
+Typically the bonds formed after ori are much more stronger than those formed during ori,btohqsg
+are CCAs compulsory in JC tho?,btohqsg
+if JC has proper funding for clubs to do events ok la.If no money  mostly wasting precious study time only haha,btohqsg
+heard last time got JC has water polo?,btohqsg
+quite envy that Singapore has so much funding for CCAs,btohqsg
+in Malaysia one  mostly pointless meetings since no proper guidance one.,btohqsg
+Not a good time for Singapore to be doing this,btohqsg
+They brought us to Pulau Ubin last year,btohqsg
+Ngl idk why the uniform made me feel like its cosplaying💀,btohqsg
+Since I’m a senior of that CCA I need to plan the Annual camp for the juniors (Sec 1 and 2’s),btohqsg
+After i sec 1 i zao,btohqsg
+explains why my Fullerton MMF been so shaky lately.,btohqsg
+Especially after being accused of selling Nvidia GPU’s to China,btohqsg
+Now the US is pissed at Singapore,btohqsg
+Wouldn’t be surprised if a sanction comes around quite soon,btohqsg
+Let’s just hope trump doesn’t do it 💔,btohqsg
+but then I feel Trump is going to fuck up Americans real good. haha,btohqsg
+But imo I think trumps gonna take this personally,btohqsg

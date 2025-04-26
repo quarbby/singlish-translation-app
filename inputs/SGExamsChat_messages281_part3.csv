@@ -1,0 +1,51 @@
+text,group
+A node of a linked list is just a structure that holds 1) a value and 2) a pointer to the next node. The linked list itself holds the pointer to the 1st node (the head) and facilitates adding nodes to the tail  deleting nodes from within etc etc,btohqsg
+if an array is a piece of contiguous memory  then linked list is something very similar but it can be found all over memory. The nodes record where the next node is that's all,btohqsg
+there's plenty of applications of linked lists actually  in fact your file system that you use on your computer stores files as a linked list,btohqsg
+Oh ok I think I have problems with the implementation mostly,btohqsg
+plenty of resources online especially for something as simple as a linked list 😊,btohqsg
+it's like one of the 1st data structure introduced in any ds course,btohqsg
+Hi guys anyone here studying psychology?,btohqsg
+Oh which route did they took?,btohqsg
+oh hahaha fellow computing student here too.. yall so fast learn LL ah,btohqsg
+The cases went up again.. zoom University gg,btohqsg
+pls do it before my eoy starts,btohqsg
+Hey guys anyone that took cbp? Aft year 1 is there a need to take an exam or smth to go to the business course I want?,btohqsg
+not from cbp but no exam to take  this being said there are exams part of your curriculum though. you go into the business course based on availability  popularity of the course and ur gpa,btohqsg
+thats for np  not too sure abt other poly's cbp but should be the same lol,btohqsg
+Anybody know any software to program on??,btohqsg
+Like software to build  debug and run coding projects on,btohqsg
+are you referring to integrated dev environments? (IDE),btohqsg
+I’m new to this type of stuff,btohqsg
+Anything that I can create a programming project on,btohqsg
+what kind of projects are you looking to do? on which languages?,btohqsg
+I’m just attempting to practically apply what I’ve learnt about python,btohqsg
+Unless u want a full ide with a debugger,btohqsg
+IDLE is better for python  i feel,btohqsg
+Hmmm ok I’ll give it a shot,btohqsg
+But I have like no clue how to use vs code,btohqsg
+I don’t even know how to debug the code,btohqsg
+Oh that one u need extensions haha,btohqsg
+Ye I installed the python one already,btohqsg
+breakpoints are places where the code will stop for u to read variables and analysis what's wrong,btohqsg
+Oh so basically the breakpoint determined which section of the code is debugged by VS code,btohqsg
+So anything below is not debugged,btohqsg
+so you can move line by line instead of having to rerun the whole code,btohqsg
+I’ll give IDLE and VS code a shot them,btohqsg
+See if I can figure out how to use them for programs,btohqsg
+ngl pycharm was quite buggy when I used it,btohqsg
+I feel vscode way better but,btohqsg
+not a pythong guy but agree that vscode is damn good for a lot of diff languages,btohqsg
+So u may wanna check them out,btohqsg
+I mean stl of most languages,btohqsg
+if you wanna do websites  you're better off w learning JS,btohqsg
+I'm not a python guy as well  so tbf I dunno abt py stl. But last time I saw it  it was quite developed,btohqsg
+Could ya send the link for standard library??,btohqsg
+That one I'm quite sure it's in the documentations  you shd be able to find it,btohqsg
+when u code u dont usually need linked list that's the thing,btohqsg
+MANGO SHOULD GIMME FOR FREE BECAUSE IM HER FRIEND ☺️☺️☺️,btohqsg
+Most of the time u dont need,btohqsg
+mmm usually u just need to understand it conceptually,btohqsg
+Ifs only good when array size changes hahah,btohqsg
+however if u have large amounts of data its quite hard to append/delete so you'd use linked list,btohqsg
+u probably wont need arrays that are more than ten thousand length,btohqsg
