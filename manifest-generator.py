@@ -17,6 +17,7 @@ from datetime import datetime
 # Configuration
 INPUT_DIRECTORY = 'inputs/'
 OUTPUT_FILE = 'manifest.json'
+DONE_FILES_PATH = 'done_files.txt'
 
 def generate_manifest():
     """Generate a manifest.json file with all CSV files in the input directory."""
@@ -26,11 +27,17 @@ def generate_manifest():
             print(f"Error: Directory '{INPUT_DIRECTORY}' does not exist")
             return False
         
+        # Read the done_files.txt to get files to exclude
+        done_files = []
+        if os.path.exists(DONE_FILES_PATH):
+            with open(DONE_FILES_PATH, 'r', encoding='utf-8') as f:
+                done_files = [line.strip() for line in f.readlines()]
+
         # Get all files in the directory
         all_files = os.listdir(INPUT_DIRECTORY)
         
         # Filter for CSV files only (case insensitive)
-        csv_files = [file for file in all_files if file.lower().endswith('.csv')]
+        csv_files = [file for file in all_files if file.lower().endswith('.csv') and file not in done_files]
         
         if not csv_files:
             print(f"Warning: No CSV files found in '{INPUT_DIRECTORY}'")
