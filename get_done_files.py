@@ -7,7 +7,7 @@ df = pd.read_excel('Translations.xlsx', sheet_name="ALL_TRANSLATIONS", header=No
 df['filename'] = df[3].apply(lambda x: x.replace('inputs/', ''))
 
 value_counts = df['filename'].value_counts()
-frequent_values = value_counts[value_counts >= 50].index.tolist()
+frequent_values = value_counts[value_counts >= 45].index.tolist()
 
 with open('done_files.txt', 'w') as f:
     for fv in frequent_values:
