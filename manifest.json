@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-06-30T08:32:30.250708",
+  "lastUpdated": "2025-07-02T10:17:37.858632",
   "files": [
     "inputs/btohqsg_messages10_part1.csv",
     "inputs/btohqsg_messages10_part10.csv",
@@ -7649,7 +7649,6 @@
     "inputs/sgcmcommunity_messages_part9.csv",
     "inputs/SGExamsChat_messages100_part1.csv",
     "inputs/SGExamsChat_messages100_part2.csv",
-    "inputs/SGExamsChat_messages100_part3.csv",
     "inputs/SGExamsChat_messages100_part4.csv",
     "inputs/SGExamsChat_messages100_part5.csv",
     "inputs/SGExamsChat_messages100_part6.csv",
@@ -16611,7 +16610,6 @@
     "inputs/SGTalk_messages409_part5.csv",
     "inputs/SGTalk_messages409_part6.csv",
     "inputs/SGTalk_messages409_part7.csv",
-    "inputs/SGTalk_messages40_part1.csv",
     "inputs/SGTalk_messages40_part2.csv",
     "inputs/SGTalk_messages40_part3.csv",
     "inputs/SGTalk_messages40_part4.csv",
@@ -19365,7 +19363,6 @@
     "inputs/sgxpennystocksdiscussion_messages219_part2.csv",
     "inputs/sgxpennystocksdiscussion_messages219_part3.csv",
     "inputs/sgxpennystocksdiscussion_messages219_part4.csv",
-    "inputs/sgxpennystocksdiscussion_messages219_part5.csv",
     "inputs/sgxpennystocksdiscussion_messages219_part6.csv",
     "inputs/sgxpennystocksdiscussion_messages219_part7.csv",
     "inputs/sgxpennystocksdiscussion_messages219_part8.csv",
